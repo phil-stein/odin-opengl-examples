@@ -9,10 +9,10 @@ resources: [odin docs](https://odin-lang.org/docs/), [bg-thompson: OpenGL-Tutori
 
 ! from __10__ onwards if you get linking errors, recompile 10_ufbx/external/ufbx/ufbx.c -> ufbx.lib / .a, see [odin-ufbx](https://github.com/cshenton/odin-ufbx)<br>
 
-__00_hello__: default odin hello world <br>
-__01_import__: using the import tatement and packages <br>
+| | |
+| --- | --- |
+| __00_hello__: default odin hello world | __01_import__: using the import statement and packages |
 | __02_raylib__: open default window in raylib | __03_glfw__: blank window in glfw |
-|---|---|
 | <img src="https://github.com/phil-stein/odin-opengl-examples/blob/main/files/02_raylib.png" alt="logo" width="400"> | <img src="https://github.com/phil-stein/odin-opengl-examples/blob/main/files/03_glfw.png" alt="logo" width="400"> |
 | __04_vulkan__: blank window using vulkan | __05_triangle__: opengl & glfw triangle |
 | <img src="https://github.com/phil-stein/odin-opengl-examples/blob/main/files/04_vulkan.png" alt="logo" width="400"> | <img src="https://github.com/phil-stein/odin-opengl-examples/blob/main/files/05_triangle.png" alt="logo" width="400"> |
