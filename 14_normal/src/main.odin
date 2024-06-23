@@ -32,45 +32,16 @@ main :: proc()
   // input_set_cursor_visibile( false )
   
   data.global_shader = make_shader( "assets/basic.vert", "assets/basic.frag" )
-  data.unlit_shader  = make_shader( "assets/basic.vert", "assets/unlit.frag" )
 
   
   // -- add entities --
 
-  // cube_idx := len(data.entity_arr)
-  // append( &data.entity_arr, entity_t{ pos = { -2.5, 2, 0 }, rot = { 0, 0, 0 }, scl = { 1, 1, 1 },
-  //                                     mesh = mesh_load_fbx( "assets/cube.fbx" ), 
-  //                                     texture = make_texture( "assets/blank.png" ) } )
-  //                                     // texture = make_texture( "assets/texture_01.png" ) } )
-  //
-  // sphere_idx := len(data.entity_arr)
-  // append( &data.entity_arr, entity_t{ pos = {  0.0, 2, 0 }, rot = { 0, 0, 0 }, scl = { 1, 1, 1 },
-  //                                     mesh = mesh_load_fbx( "assets/sphere.fbx" ), 
-  //                                     texture = make_texture( "assets/blank.png" ) } )
-  //
-  // suzanne_idx := len(data.entity_arr)
-  // append( &data.entity_arr, entity_t{ pos = { 2.5, 2, 0 }, rot = { 0, 0, 0 }, scl = { 1, 1, 1 }, 
-  //                                     mesh = mesh_load_fbx( "assets/suzanne_02.fbx" ), 
-  //                                     texture = make_texture( "assets/blank.png" ) } )
-  //
-  // suzanne_02_idx := len(data.entity_arr)
-  // append( &data.entity_arr, entity_t{ pos = { 0.0, 5, 0 }, rot = { 0, 0, 0 }, scl = { 1, 1, 1 }, 
-  //                                     mesh = mesh_load_fbx( "assets/suzanne_02.fbx" ), 
-  //                                     texture = make_texture( "assets/blank.png" ) } )
-
-
   sphere_idx := len(data.entity_arr)
-  append( &data.entity_arr, entity_t{ pos = {  0.0, 2, 0 }, rot = { 0, 0, 0 }, scl = { 0.1, 0.1, 0.1 },
+  append( &data.entity_arr, entity_t{ pos = {  0, 0, 0 }, rot = { 0, 0, 0 }, scl = { 1, 1, 1 },
                                       mesh = mesh_load_fbx( "assets/sphere.fbx" ), 
                                       texture = make_texture( "assets/blank.png" ),
-                                      normal  = make_texture( "assets/devil_paladin_body/normal.png" ) } )
+                                      normal  = make_texture( "assets/normal.png" ) } )
 
-  head_idx := len(data.entity_arr)
-  append( &data.entity_arr, entity_t{ pos = { 0, 0, 0 }, rot = { 0, 0, 0 }, scl = { 1, 1, 1 }, 
-                                      mesh    = mesh_load_fbx( "assets/head_01.fbx" ), 
-                                      texture = make_texture( "assets/blank.png" ),
-                                      normal  = make_texture( "assets/devil_paladin_body/normal.png" ) } )
-    
   gl.UseProgram( data.global_shader )
   // defer gl.BindVertexArray(0)
   gl.Enable( gl.DEPTH_TEST )
@@ -131,34 +102,17 @@ main :: proc()
 	  { gl.PolygonMode(gl.FRONT_AND_BACK, gl.FILL) }
 
     // // move entities
-    // data.entity_arr[cube_idx].pos.y    = math.sin_f32( data.total_t ) +2
-    // data.entity_arr[sphere_idx].pos.y  = math.sin_f32( data.total_t ) +2
-    // data.entity_arr[sphere_idx].pos.z  = math.sin_f32( data.total_t *2 )
-    // data.entity_arr[suzanne_idx].pos.z = math.sin_f32( data.total_t )
-    // // data.entity_arr[suzanne_02_idx].rot.y = math.sin_f32( data.total_t ) * 360
-    // data.entity_arr[suzanne_02_idx].rot.y += 30.0 * data.delta_t
-    // // fmt.println( data.entity_arr[suzanne_02_idx].rot.y )
+    data.entity_arr[sphere_idx].rot.y  = data.total_t * 20
 
     camera_set_view_mat() 
 
     // light
-    data.entity_arr[sphere_idx].pos = linalg.vec3{ 0, 5, math.sin_f32( data.total_t ) * 4 }
-    draw_entity( &data.entity_arr[sphere_idx], data.unlit_shader, data.entity_arr[sphere_idx].pos )
+    light_pos := linalg.vec3{ 0, 5, math.sin_f32( data.total_t ) * 4 }
 
     // -- draw meshes --
     for &e in data.entity_arr
     {
-      scl := e.scl
-      pos := e.pos
-      e.scl *= 1.025
-      e.pos.y -= 0.015
-      gl.CullFace( gl.BACK)
-      draw_entity( &e, data.unlit_shader, data.entity_arr[sphere_idx].pos )
-      gl.CullFace( gl.FRONT)
-      e.scl = scl
-      e.pos = pos
-
-      draw_entity( &e, data.global_shader, data.entity_arr[sphere_idx].pos )
+      draw_entity( &e, data.global_shader, light_pos )
     }
     glfw.SwapBuffers( window )
     

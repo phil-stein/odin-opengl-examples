@@ -72,7 +72,7 @@ data : data_t =
 
   cam = 
   {
-    pos       = { 0, 0.5, -2.5 },
+    pos       = { 0, 0.5, -3.5 },
     target    = {  0, 0, 0 },
     pitch_rad = -0.1, // -0.4,
     yaw_rad   = 14.2,

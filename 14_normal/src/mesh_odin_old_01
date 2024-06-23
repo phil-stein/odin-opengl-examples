@@ -53,71 +53,20 @@ mesh_load_fbx :: proc( path: cstring ) -> ( mesh: mesh_t )
     face := m.faces.data[face_ix]
     assert(face.num_indices == 3, "mesh faces with more than 3 triangles.\n"); 
 
-    i0 := int(face.index_begin)
-    i1 := i0 +1
-    i2 := i0 +2
-    
-    _pos0 := m.vertex_position.values.data[m.vertex_position.indices.data[i0]]
-    _pos1 := m.vertex_position.values.data[m.vertex_position.indices.data[i1]]
-    _pos2 := m.vertex_position.values.data[m.vertex_position.indices.data[i2]]
-    pos0 : linalg.vec3 = { f32(_pos0.x), f32(_pos0.y), f32(_pos0.z) }
-    pos1 : linalg.vec3 = { f32(_pos1.x), f32(_pos1.y), f32(_pos1.z) }
-    pos2 : linalg.vec3 = { f32(_pos2.x), f32(_pos2.y), f32(_pos2.z) }
+    // i0 := int(face.index_begin)
+    // i1 := i0 +1
+    // i2 := i0 +2
+    //
+    // _pos0 := m.vertex_position.values.data[m.vertex_position.indices.data[i0]]
+    // _pos1 := m.vertex_position.values.data[m.vertex_position.indices.data[i1]]
+    // _pos2 := m.vertex_position.values.data[m.vertex_position.indices.data[i2]]
+    // pos0 : linalg.vec3 = { f32(_pos0.x), f32(_pos0.y), f32(_pos0.z) }
+    // pos1 : linalg.vec3 = { f32(_pos1.x), f32(_pos1.y), f32(_pos1.z) }
+    // pos2 : linalg.vec3 = { f32(_pos2.x), f32(_pos2.y), f32(_pos2.z) }
 
-    _tex0 := m.vertex_uv.values.data[m.vertex_uv.indices.data[i0]]
-    _tex1 := m.vertex_uv.values.data[m.vertex_uv.indices.data[i1]]
-    _tex2 := m.vertex_uv.values.data[m.vertex_uv.indices.data[i2]]
-    tex0  : linalg.vec2 = { f32(_tex0.x), f32(_tex0.y) }
-    tex1  : linalg.vec2 = { f32(_tex1.x), f32(_tex1.y) }
-    tex2  : linalg.vec2 = { f32(_tex2.x), f32(_tex2.y) }
-   
-    // vec2 uv0, uv1;
-    // vec2_sub(tex1, tex0, uv0);
-    // vec2_sub(tex2, tex0, uv1);
-    uv0 := tex1 - tex0
-    uv1 := tex2 - tex0
-    
-    // vec3 edge0, edge1;
-    // vec3_sub(pos1, pos0, edge0);
-    // vec3_sub(pos2, pos0, edge1);
-    edge0 := pos1 - pos0
-    edge1 := pos2 - pos0
-
-    // float r = 1.0f / (uv0[0] * uv1[1] - uv0[1] * uv1[0]);
-    r := 1.0 / (uv0.x * uv1.y - uv0.y * uv1.x)
-    // P_F32(r);
-
-    // vec3 tan = VEC3_XYZ_INIT(
-    //     ((edge0[0] * uv1[1]) - (edge1[0] * uv0[1])) * r,
-    //     ((edge0[1] * uv1[1]) - (edge1[1] * uv0[1])) * r,
-    //     ((edge0[2] * uv1[1]) - (edge1[2] * uv0[1])) * r
-    //     );
-    tan := linalg.vec3{ ((edge0.x * uv1.y) - (edge1.x * uv0.y)) * r,
-                        ((edge0.y * uv1.y) - (edge1.y * uv0.y)) * r,
-                        ((edge0.z * uv1.y) - (edge1.z * uv0.y)) * r }
-
-
-    // for vertex_ix in 0 ..< face.num_indices
-    // for vertex_ix in (face.num_indices -1) ..= 0 
-    // for vertex_ix := face.num_indices -1; vertex_ix >= 0; vertex_ix -= 1
-    // #reverse for vertex_ix := 0; vertex_ix < face.num_indices; vertex_ix += 1
-    // #reverse for vertex_ix in 0 ..< face.num_indices
-
-    // for vertex_ix := int(face.num_indices) -1; vertex_ix >= 0; vertex_ix -= 1
-    // {
-    //   fmt.println( "vertex_ix: ", vertex_ix )
-    // }
-    // assert( 1 == 0 ) 
-
-    // for vertex_ix := int(face.num_indices) -1; vertex_ix >= 0; vertex_ix -= 1
     for vertex_ix in 0 ..< face.num_indices
     {
-      // fmt.println( "vertex_ix: ", vertex_ix )
-      index := face.index_begin + u32(vertex_ix)
-      // index := face.index_begin + (face.num_indices - vertex_ix -1)
-      // fmt.println( "vertex_ix: ", vertex_ix )
-      // fmt.println( "index: ", (face.num_indices - vertex_ix -1))
-
+      index := face.index_begin + vertex_ix
       // arrput((*indices), (u32)index);
       append( &indices, index )
       pos    := m.vertex_position.values.data[m.vertex_position.indices.data[index]]
@@ -142,9 +91,6 @@ mesh_load_fbx :: proc( path: cstring ) -> ( mesh: mesh_t )
       // arrput((*verts), (f32)tan[0]);
       // arrput((*verts), (f32)tan[2]);
       // arrput((*verts), (f32)-tan[1]);
-      append( &vertices, f32(tan.x) )
-      append( &vertices, f32(tan.z) )
-      append( &vertices, f32(tan.y) )
     }
 
   }
@@ -181,24 +127,20 @@ mesh_make :: proc( vertices: [^]f32, vertices_len: int, indices: [^]u32, indices
 
   gl.BufferData( gl.ELEMENT_ARRAY_BUFFER, indices_len * size_of(u32), indices, gl.STATIC_DRAW )
 
-  F_PER_V :: 11 // floats per vertex
-
   // position
-  gl.VertexAttribPointer(0,                       // index
-                         3,                       // size
-                         gl.FLOAT,                // type
-                         gl.FALSE,                // normalized
-                         F_PER_V * size_of(f32),  // stride
-                         0)                       // offset
+  gl.VertexAttribPointer(0,                   // index
+                         3,                   // size
+                         gl.FLOAT,            // type
+                         gl.FALSE,            // normalized
+                         8 * size_of(f32),    // stride
+                         0)                   // offset
   
-  gl.VertexAttribPointer( 1, 2, gl.FLOAT, gl.FALSE, F_PER_V * size_of(f32), 3 * size_of(f32) )  // uvs
-  gl.VertexAttribPointer( 2, 3, gl.FLOAT, gl.FALSE, F_PER_V * size_of(f32), 5 * size_of(f32) )  // normals
-  gl.VertexAttribPointer( 3, 3, gl.FLOAT, gl.FALSE, F_PER_V * size_of(f32), 8 * size_of(f32) )  // tangents 
+  gl.VertexAttribPointer( 1, 2, gl.FLOAT, gl.FALSE, 8 * size_of(f32), 3 * size_of(f32) )  // uvs
+  gl.VertexAttribPointer( 2, 3, gl.FLOAT, gl.FALSE, 8 * size_of(f32), 5 * size_of(f32) )  // normals
 
   gl.EnableVertexAttribArray( 0 ) // pos
   gl.EnableVertexAttribArray( 1 ) // uv
   gl.EnableVertexAttribArray( 2 ) // normal
-  gl.EnableVertexAttribArray( 3 ) // tangents 
 
   return
 }
@@ -206,36 +148,36 @@ mesh_make :: proc( vertices: [^]f32, vertices_len: int, indices: [^]u32, indices
 mesh_make_cube :: proc() -> ( mesh: mesh_t )
 {
   vertices := [?]f32 { 
-    // pos,       uvs     normals    tangents 
-    -1, -1, -1,   0, 0,   0, 0, 0,   0, 0, 0,  
-    +1, -1, -1,   1, 0,   0, 0, 0,   0, 0, 0,  
-    -1, +1, -1,   0, 1,   0, 0, 0,   0, 0, 0, 
-    +1, +1, -1,   1, 1,   0, 0, 0,   0, 0, 0, 
-                                              
-    -1, -1, +1,   0, 0,   0, 0, 0,   0, 0, 0, 
-    +1, -1, +1,   1, 0,   0, 0, 0,   0, 0, 0, 
-    -1, +1, +1,   0, 1,   0, 0, 0,   0, 0, 0, 
-    +1, +1, +1,   1, 1,   0, 0, 0,   0, 0, 0, 
-                                              
-    -1, -1, -1,   0, 0,   0, 0, 0,   0, 0, 0, 
-    -1, +1, -1,   1, 0,   0, 0, 0,   0, 0, 0, 
-    -1, -1, +1,   0, 1,   0, 0, 0,   0, 0, 0, 
-    -1, +1, +1,   1, 1,   0, 0, 0,   0, 0, 0, 
-                                              
-    +1, -1, -1,   0, 0,   0, 0, 0,   0, 0, 0, 
-    +1, +1, -1,   1, 0,   0, 0, 0,   0, 0, 0, 
-    +1, -1, +1,   0, 1,   0, 0, 0,   0, 0, 0, 
-    +1, +1, +1,   1, 1,   0, 0, 0,   0, 0, 0, 
-                                     
-    -1, -1, -1,   0, 0,   0, 0, 0,   0, 0, 0, 
-    +1, -1, -1,   1, 0,   0, 0, 0,   0, 0, 0, 
-    -1, -1, +1,   0, 1,   0, 0, 0,   0, 0, 0, 
-    +1, -1, +1,   1, 1,   0, 0, 0,   0, 0, 0, 
-                                     
-    -1, +1, -1,   0, 0,   0, 0, 0,   0, 0, 0, 
-    +1, +1, -1,   1, 0,   0, 0, 0,   0, 0, 0, 
-    -1, +1, +1,   0, 1,   0, 0, 0,   0, 0, 0, 
-    +1, +1, +1,   1, 1,   0, 0, 0,   0, 0, 0, 
+    // pos,       uvs     normals
+    -1, -1, -1,   0, 0,   0, 0, 0, 
+    +1, -1, -1,   1, 0,   0, 0, 0, 
+    -1, +1, -1,   0, 1,   0, 0, 0, 
+    +1, +1, -1,   1, 1,   0, 0, 0, 
+
+    -1, -1, +1,   0, 0,   0, 0, 0, 
+    +1, -1, +1,   1, 0,   0, 0, 0, 
+    -1, +1, +1,   0, 1,   0, 0, 0, 
+    +1, +1, +1,   1, 1,   0, 0, 0, 
+
+    -1, -1, -1,   0, 0,   0, 0, 0, 
+    -1, +1, -1,   1, 0,   0, 0, 0, 
+    -1, -1, +1,   0, 1,   0, 0, 0, 
+    -1, +1, +1,   1, 1,   0, 0, 0, 
+
+    +1, -1, -1,   0, 0,   0, 0, 0, 
+    +1, +1, -1,   1, 0,   0, 0, 0, 
+    +1, -1, +1,   0, 1,   0, 0, 0, 
+    +1, +1, +1,   1, 1,   0, 0, 0, 
+                          
+    -1, -1, -1,   0, 0,   0, 0, 0, 
+    +1, -1, -1,   1, 0,   0, 0, 0, 
+    -1, -1, +1,   0, 1,   0, 0, 0, 
+    +1, -1, +1,   1, 1,   0, 0, 0, 
+                          
+    -1, +1, -1,   0, 0,   0, 0, 0, 
+    +1, +1, -1,   1, 0,   0, 0, 0, 
+    -1, +1, +1,   0, 1,   0, 0, 0, 
+    +1, +1, +1,   1, 1,   0, 0, 0, 
   }
   // index_array : [3 * 2 * 6] u32
   // index_array = {
