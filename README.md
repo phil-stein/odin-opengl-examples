@@ -7,7 +7,7 @@ as i used this to get to know odin <br>
 
 resources: [odin docs](https://odin-lang.org/docs/), [bg-thompson: OpenGL-Tutorials-In-Odin](https://github.com/bg-thompson/OpenGL-Tutorials-In-Odin), [learnopengl.com](https://learnopengl.com) <br>
 
-assets: [my own texture](https://www.artstation.com/artwork/BX4Xq9), cube / sphere / suzanne model made using blender <br>
+assets: [my own texture](https://www.artstation.com/artwork/BX4Xq9), [stylized-brick-002 texture](https://3dtextures.me/2022/01/29/stylized-bricks-002/), cube / sphere / suzanne model made using blender <br>
 
 ! from __10__ onwards if you get linking errors, recompile 10_ufbx/external/ufbx/ufbx.c -> ufbx.lib / .a, see [odin-ufbx](https://github.com/cshenton/odin-ufbx)<br>
 
