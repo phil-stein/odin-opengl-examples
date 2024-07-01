@@ -70,18 +70,18 @@ void main()
   // float emissive  = texture(material, uv_coords).b;
   float roughness = texture(roughness, _in.uv_coords).r;
   float metallic  = texture(metallic, _in.uv_coords).r;
-  float emissive  = 0.0; // texture(material, uv_coords).b;
+  float emissive  = 1.0; // texture(material, uv_coords).b;
   float ao = 0.0;
 
   // vec3 albedo    = texture(color, uv_coords).rgb;
   // vec3 _normal   = texture(normal, uv_coords).xyz;
   // vec3 _position = texture(position, uv_coords).xyz;
   vec3 albedo    = texture(albedo, _in.uv_coords).rgb;
+  vec3 _position = _in.frag_pos; 
   vec3 _normal;
-  _normal = texture(normal, _in.uv_coords).rgb;
+  _normal = texture(normal, _in.uv_coords).xyz;
   _normal = normalize(_normal * 2.0 - 1.0);
   _normal = normalize(_in.TBN * _normal);
-  vec3 _position = _in.frag_pos; 
   vec3 N = normalize(_normal);
   vec3 V = normalize(view_pos - _position);
   vec3 R = reflect(-V, N); 
@@ -168,9 +168,15 @@ void main()
   // else
   // { FragColor = vec4(col, 1.0); }
 
+  FragColor = vec4(col, 1.0);
+  // FragColor = vec4(_normal, 1.0);
+  // FragColor = vec4(N, 1.0);
+  // FragColor = vec4(v, 1.0);
+  // FragColor = vec4(_in.normal, 1.0);
+
   // mix lit and unlit bassed on emissive
-  // FragColor = vec4(col, 1.0);
-  FragColor = ( vec4(col, 1.0) * min(emissive - 1.0, 0.0)) + ( vec4(albedo, 1.0) * emissive);
+  // FragColor = ( vec4(col, 1.0) * min(emissive - 1.0, 0.0)) + ( vec4(albedo, 1.0) * emissive);
+
   // FragColor = vec4(ambient, 1.0);
   // FragColor = vec4(specular, 1.0);
   // FragColor = vec4(min(specular, 0.4), 1.0);
@@ -184,7 +190,7 @@ void main()
   // FragColor = vec4(prefilteroed_color, 1.0);
   // FragColor = vec4(fresnel, 1.0);
   // FragColor = vec4(1.0 - fresnel, 1.0);
-  FragColor = vec4( 1.0, 1.0, 1.0, 1.0 );
+  // FragColor = vec4( 1.0, 1.0, 1.0, 1.0 );
 }
 
 

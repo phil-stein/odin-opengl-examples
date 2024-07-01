@@ -1,6 +1,6 @@
 package core
 
-import "core:fmt"
+// import "core:fmt"
 import "vendor:glfw"
 
 KEY :: enum

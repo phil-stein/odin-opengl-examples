@@ -1,19 +1,19 @@
 package core
 
 import        "core:fmt"
-import        "core:c"
-import        "core:time"
+// import        "core:c"
+// import        "core:time"
 import        "core:math"
 import linalg "core:math/linalg/glsl"
 import        "core:os"
-import        "core:runtime"
-import        "core:slice"
+// import        "core:runtime"
+// import        "core:slice"
 import        "vendor:glfw"
 import gl     "vendor:OpenGL"
 import        "core:image"
 import        "core:image/png"
 
-
+blank_tex : u32
 
 main :: proc() 
 {
@@ -38,53 +38,76 @@ main :: proc()
 
   // ---- setup ----
 
+  fmt.println( "pre data init" )
   data_init()
+
+  data.quad_shader  = make_shader( #load( "../assets/quad.vert", string ), 
+                                   #load( "../assets/quad.frag", string ), "quad_shader")
   
+  fmt.println( "pre global shader" )
   // data.global_shader = make_shader( #load( "../assets/basic.vert", string ), 
   //                                   #load( "../assets/basic.frag", string ))
   data.global_shader = make_shader( #load( "../assets/basic.vert", string ), 
                                     #load( "../assets/pbr.frag",   string ), "global_shader")
 
 
-  data.global_shader = make_shader( #load( "../assets/cubemap/brdf_lut.vert", string ), 
+  fmt.println( "pre brdf_lut shader" )
+  data.brdf_lut_shader = make_shader( #load( "../assets/cubemap/brdf_lut.vert", string ), 
                                     #load( "../assets/cubemap/brdf_lut.frag", string ))
+  fmt.println( "pre brdf_lut" )
   data.brdf_lut = make_brdf_lut()
 
+  fmt.println( "pre equirect shader" )
   // SPRINTF(ASSET_PATH_MAX + 64, vert_path, "%sshaders/cubemap/render_equirect.vert", core_data->asset_path);
   // SPRINTF(ASSET_PATH_MAX + 64, frag_path, "%sshaders/cubemap/render_equirect.frag", core_data->asset_path);
   // core_data->equirect_shader = shader_create_from_file(vert_path, frag_path, NULL, "equirect_render_shader");
   data.equirect_shader = make_shader( #load( "../assets/cubemap/render_equirect.vert", string ), 
                                       #load( "../assets/cubemap/render_equirect.frag", string ))
  
+  fmt.println( "pre irradiance shader" )
   // SPRINTF(ASSET_PATH_MAX + 64, frag_path, "%sshaders/cubemap/irradiance_map.frag", core_data->asset_path);
   // core_data->irradiance_map_shader = shader_create_from_file(vert_path, 
 		// 			      frag_path, NULL, "irradiance_map_shader");
   data.irradiance_map_shader = make_shader( #load( "../assets/cubemap/render_equirect.vert", string ), 
                                             #load( "../assets/cubemap/irradiance_map.frag", string ))
  
+  fmt.println( "pre prefilter shader" )
   // SPRINTF(ASSET_PATH_MAX + 64, frag_path, "%sshaders/cubemap/prefilter_map.frag", core_data->asset_path);
   // core_data->prefilter_shader = shader_create_from_file(vert_path, 
 		// 			      frag_path, NULL, "prefilter_shader");
   data.prefilter_shader = make_shader( #load( "../assets/cubemap/render_equirect.vert", string ), 
                                        #load( "../assets/cubemap/prefilter_map.frag", string ))
   
+  fmt.println( "pre cubemap load" )
+  // fmt.println( data.cubemap.prefilter )
+  // fmt.println( data.cubemap.irradiance )
+  // fmt.println( data.brdf_lut )
   // core_data->cube_map = cubemap_load("#cubemaps/gothic_manor_01_2k.hdr");
   // core_data->cube_map.intensity = 1.9f;
   cubemap_data := #load( "../assets/gothic_manor_01_2k.hdr" )
   data.cubemap = cubemap_load( &cubemap_data[0], len(cubemap_data) )
-  data.cubemap.intensity = 1.9
+  data.cubemap.intensity = 4.9
+  // fmt.println( data.cubemap.prefilter )
+  // fmt.println( data.cubemap.irradiance )
+  // fmt.println( data.brdf_lut )
+  fmt.println( "post cubemap load" )
+  
+  // assert( 0 == 1 )
 
-
+  blank_tex = make_texture( "assets/blank.png", true )
+  // fmt.println( data.cubemap.prefilter )
+  // fmt.println( data.cubemap.irradiance )
+  // fmt.println( data.brdf_lut )
   
   // -- add entities --
-  char_idx := len(data.entity_arr)
+  // char_idx := len(data.entity_arr)
   append( &data.entity_arr, entity_t{ pos = { 0, 0, 0 }, rot = { 0, 0, 0 }, scl = { 1, 1, 1 },
-                                      mesh = mesh_load_fbx( "assets/female_char_01.fbx" ), 
+                                      mesh = mesh_load_fbx( "assets/female_char_01/female_char_01.fbx" ), 
                                       mat  = { 
-                                               albedo    = make_texture( "assets/albedo.png" ), 
-                                               roughness = make_texture( "assets/roughness.png" ), 
-                                               metallic  = make_texture( "assets/metallic.png" ), 
-                                               normal    = make_texture( "assets/normal.png" ) 
+                                               albedo    = make_texture( "assets/female_char_01/albedo.png",    true ), 
+                                               roughness = make_texture( "assets/female_char_01/roughness.png", false ), 
+                                               metallic  = make_texture( "assets/female_char_01/metallic.png",  false ), 
+                                               normal    = make_texture( "assets/female_char_01/normal.png",    false ) 
                                              },
                                     } )
 
@@ -100,15 +123,15 @@ main :: proc()
   //                                   } )
 
   // sphere_idx := len(data.entity_arr)
-  // append( &data.entity_arr, entity_t{ pos = {  0.0, 2, 0 }, rot = { 0, 0, 0 }, scl = { 1, 1, 1 },
-  //                                     mesh = mesh_load_fbx( "assets/sphere.fbx" ), 
-  //                                     mat  = { 
-  //                                              albedo    = make_texture( "assets/blank.png" ), 
-  //                                              roughness = make_texture( "assets/roughness.png" ), 
-  //                                              metallic  = make_texture( "assets/metallic.png" ), 
-  //                                              normal    = make_texture( "assets/normal.png" ) 
-  //                                            },
-  //                                   } )
+  append( &data.entity_arr, entity_t{ pos = {  2, 2, 0 }, rot = { 0, 0, 0 }, scl = { 1, 1, 1 },
+                                      mesh = mesh_load_fbx( "assets/sphere.fbx" ), 
+                                      mat  = { 
+                                               albedo    = make_texture( "assets/brick/albedo.png",    true ), 
+                                               roughness = make_texture( "assets/brick/roughness.png", false ), 
+                                               metallic  = make_texture( "assets/blank_black.png",     false ), 
+                                               normal    = make_texture( "assets/brick/normal.png",    false ) 
+                                             },
+                                    } )
 
   // suzanne_idx := len(data.entity_arr)
   // append( &data.entity_arr, entity_t{ pos = { 2.5, 2, 0 }, rot = { 0, 0, 0 }, scl = { 1, 1, 1 }, 
@@ -126,18 +149,13 @@ main :: proc()
 
   gl.Disable( gl.BLEND ) // enable blending of transparent texture
 
-  // @TODO: @BUGG: meshes only show correct if culling front faces, 
-  //               reversing order in mesh_load_fbx() didnt work
   // gl.Disable( gl.CULL_FACE )
-  gl.FrontFace( gl.CCW )
   gl.Enable( gl.CULL_FACE )
-  // gl.CullFace( gl.BACK )
-  gl.CullFace( gl.FRONT )
+  gl.CullFace( gl.BACK )
 
   gl.Enable( gl.TEXTURE_CUBE_MAP_SEAMLESS )
   
 
-  gl.UseProgram( data.global_shader )
 
   // ---- main loop ----
   for ( !window_should_close() )
@@ -154,6 +172,16 @@ main :: proc()
 
     if ( keystates[KEY.TAB].pressed )
     { data.wireframe_mode_enabled  = !data.wireframe_mode_enabled }
+    // recompiler shader
+    if ( keystates[KEY.ENTER].pressed )
+    {
+      gl.DeleteProgram( data.global_shader )
+      data.global_shader = make_shader( #load( "../assets/basic.vert", string ), 
+                                        #load( "../assets/pbr.frag",   string ), "global_shader")
+      gl.UseProgram( data.global_shader )
+      fmt.println( "recompiled shader" )
+      assert( false, "shaders not loaded at runtime, check 13_cel" )
+    }
 
     // gl.ClearColor( 0.0, 1.0, 1.0, 1.0 )
     gl.ClearColor( 0.0, 0.0, 0.0, 1.0 )
@@ -173,10 +201,8 @@ main :: proc()
     // data.entity_arr[suzanne_idx].pos.z = math.sin_f32( data.total_t )
 
     
-
-
-
     // -- draw meshes --
+    gl.UseProgram( data.global_shader )
     for &e in data.entity_arr
     {
       // gl.UseProgram( global_shader )
@@ -200,23 +226,18 @@ main :: proc()
 
       tex_idx := 0
       gl.ActiveTexture( u32(gl.TEXTURE0 + tex_idx) )
-      gl.BindTexture( gl.TEXTURE_2D, data.cubemap.irradiance )
+      gl.BindTexture( gl.TEXTURE_CUBE_MAP, data.cubemap.irradiance )
       gl.Uniform1i( gl.GetUniformLocation(data.global_shader, "irradiance_map"), i32(tex_idx) )
       tex_idx += 1
       gl.ActiveTexture( u32(gl.TEXTURE0 + tex_idx) )
-      gl.BindTexture( gl.TEXTURE_2D, data.cubemap.prefilter )
+      gl.BindTexture( gl.TEXTURE_CUBE_MAP, data.cubemap.prefilter )
       gl.Uniform1i( gl.GetUniformLocation(data.global_shader, "prefilter_map"), i32(tex_idx) )
       tex_idx += 1
       gl.ActiveTexture( u32(gl.TEXTURE0 + tex_idx) )
       gl.BindTexture( gl.TEXTURE_2D, data.brdf_lut )
       gl.Uniform1i( gl.GetUniformLocation(data.global_shader, "brdf_lut"), i32(tex_idx) )
-
-      // -- set lights --
-      gl.Uniform1i( gl.GetUniformLocation(data.global_shader, "dir_lights_len"), 0 )
-      // ...
-      gl.Uniform1i( gl.GetUniformLocation(data.global_shader, "point_lights_len"), 0 )
-      // ...
      
+      tex_idx += 1
       gl.ActiveTexture( u32(gl.TEXTURE0 + tex_idx) )
       gl.BindTexture( gl.TEXTURE_2D, e.mat.albedo )
       gl.Uniform1i( gl.GetUniformLocation(data.global_shader, "albedo"), i32(tex_idx) )
@@ -233,11 +254,32 @@ main :: proc()
       gl.BindTexture( gl.TEXTURE_2D, e.mat.normal )
       gl.Uniform1i( gl.GetUniformLocation(data.global_shader, "normal"), i32(tex_idx) )
 
+      // -- set lights --
+      // gl.Uniform1i( gl.GetUniformLocation(data.global_shader, "dir_lights_len"), 1 )
+      gl.Uniform1i( gl.GetUniformLocation(data.global_shader, "dir_lights_len"), 0 )
+      gl.Uniform3f( gl.GetUniformLocation(data.global_shader, "dir_lights[0].direction"), 0.2, 0.8, 0.0 )
+      gl.Uniform3f( gl.GetUniformLocation(data.global_shader, "dir_lights[0].color"),     1.0,  1.0, 1.0 )
+
+      gl.Uniform1i( gl.GetUniformLocation(data.global_shader, "point_lights_len"), 0 )
+      // ...
+
       gl.DrawElements( gl.TRIANGLES,             // Draw triangles.
                        i32(e.mesh.indices_len),  // indices length
                        gl.UNSIGNED_INT,          // Data type of the indices.
                        rawptr(uintptr(0)) )      // Pointer to indices. (Not needed.)
     }
+
+    // draw_quad( linalg.vec2{ 0.5, 0.5 }, linalg.vec2{ 0.5, 0.5 }, blank_tex )
+
+    // fmt.println( data.cubemap.prefilter )
+    // fmt.println( data.cubemap.irradiance )
+    // fmt.println( data.brdf_lut )
+    // draw_quad( linalg.vec2{  0.55,  0.55 }, linalg.vec2{ 0.45, 0.45 }, data.cubemap.irradiance )
+    // draw_quad( linalg.vec2{ -0.55,  0.55 }, linalg.vec2{ 0.45, 0.45 }, data.cubemap.prefilter )
+    // draw_quad( linalg.vec2{ -0.55, -0.55 }, linalg.vec2{ 0.45, 0.45 }, data.brdf_lut )
+    
+    // draw_quad( linalg.vec2{ -0.55,  0.55 }, linalg.vec2{ 0.45, 0.45 }, data.entity_arr[char_idx].mat.albedo )
+    // draw_quad( linalg.vec2{  0.55,  0.55 }, linalg.vec2{ 0.45, 0.45 }, data.entity_arr[char_idx].mat.normal)
 
     glfw.SwapBuffers( data.window )
     
@@ -254,6 +296,29 @@ main :: proc()
 
   glfw.DestroyWindow( data.window )
   glfw.Terminate()
+}
+
+draw_quad :: proc( pos, scl: linalg.vec2, texture_handle: u32 )
+{
+  gl.Disable( gl.CULL_FACE )
+  gl.Disable( gl.DEPTH_TEST)
+
+  // -- draw triangle --
+  gl.UseProgram( data.quad_shader )
+  gl.BindVertexArray( data.quad_vao )
+  gl.Uniform2f( gl.GetUniformLocation(data.quad_shader, "pos"), pos.x, pos.y )
+  gl.Uniform2f( gl.GetUniformLocation(data.quad_shader, "scl"), scl.x, scl.y )
+  
+  gl.ActiveTexture( gl.TEXTURE0 )
+  gl.BindTexture( gl.TEXTURE_2D, texture_handle )
+  gl.Uniform1i( gl.GetUniformLocation(data.quad_shader, "tex"), 0 )
+
+  gl.DrawArrays( gl.TRIANGLES,    // Draw triangles.
+                 0,               // Begin drawing at index 0.
+                 6 )              // Use 3 indices.
+
+  gl.Enable( gl.CULL_FACE )
+  gl.Enable( gl.DEPTH_TEST)
 }
 
 make_model :: proc( pos, rot, scale: linalg.vec3 ) -> ( model: linalg.mat4 )
@@ -307,11 +372,20 @@ make_shader :: proc( vertex_src, fragment_src: string, name := "unnamed") -> ( h
   return
 }
 
-make_texture :: proc( path: string ) -> ( handle: u32 )
+gl_format_str :: proc( format: i32 ) -> string
 {
-  gl.GenTextures( 1, &handle )
-  gl.BindTexture( gl.TEXTURE_2D, handle )
-
+  return format == gl.R8         ? "R8"         :
+         format == gl.SRGB8      ? "SRGB8"      :
+         format == gl.RED        ? "RED"        :
+         format == gl.RGB        ? "RGB"        :
+         format == gl.SRGB       ? "SRGB"       :
+         format == gl.RGBA       ? "RGBA"       :
+         format == gl.SRGB_ALPHA ? "SRGB_ALPHA" :
+         "unknown" 
+}
+make_texture :: proc( path: string, srgb: bool ) -> ( handle: u32 )
+{
+  fmt.println( "started load --------------" )
   // Load image at compile time
   // image_file_bytes := #load( "../assets/texture_01.png" )
   image_file_bytes, ok := os.read_entire_file( path, context.allocator )
@@ -326,9 +400,9 @@ make_texture :: proc( path: string ) -> ( handle: u32 )
   // Load image  Odin's core:image library.
   image_ptr :  ^image.Image
   err       :   image.Error
-  options   :=  image.Options { .alpha_add_if_missing }
+  // options   :=  image.Options { .alpha_add_if_missing }
+  options   :=  image.Options { }
 
-  //    image_ptr, err =  q.load_from_file(IMAGELOC, options)
   image_ptr, err =  png.load_from_bytes( image_file_bytes, options )
   defer png.destroy( image_ptr )
   image_w := i32( image_ptr.width )
@@ -345,19 +419,10 @@ make_texture :: proc( path: string ) -> ( handle: u32 )
   {
       pixels[i] = b
   }
+  fmt.println( "  loaded image: ", path )
 
-  // Describe texture.
-  gl.TexImage2D(
-      gl.TEXTURE_2D,    // texture type
-      0,                // level of detail number (default = 0)
-      gl.RGBA,          // texture format
-      image_w,          // width
-      image_h,          // height
-      0,                // border, must be 0
-      gl.RGBA,          // pixel data format
-      gl.UNSIGNED_BYTE, // data type of pixel data
-      &pixels[0],  // image data
-  )
+  gl.GenTextures( 1, &handle )
+  gl.BindTexture( gl.TEXTURE_2D, handle )
 
   // Texture wrapping options.
   gl.TexParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE)
@@ -367,6 +432,61 @@ make_texture :: proc( path: string ) -> ( handle: u32 )
   gl.TexParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR)
   gl.TexParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR)
 
+  fmt.println( "  set wrapping" )
+
+
+  gl_internal_format : i32 = srgb ? gl.SRGB_ALPHA : gl.RGBA
+  gl_format          : u32 = gl.RGBA
+  switch image_ptr.channels
+  {
+    case 1:
+      gl_internal_format = srgb ? gl.SRGB8 : gl.R8
+      gl_format = gl.RED
+      break;
+    // case 2:
+    //   gl_internal_format = gl.RG8
+    //   gl_format = gl.RG
+    //   // P_INFO("gl.RGB");
+    //   break;
+    case 3:
+      gl_internal_format = srgb ? gl.SRGB : gl.RGB
+      gl_format = gl.RGB
+      break;
+    case 4:
+      gl_internal_format = srgb ? gl.SRGB_ALPHA : gl.RGBA
+      gl_format = gl.RGBA
+      break;
+    case:
+      fmt.eprintln( "texture has incorrect channel amount: ", image_ptr.channels )
+      os.exit( 1 )
+  }
+  assert( image_ptr.channels >= 1 && image_ptr.channels <= 4, "texture has incorrect channel amount" )
+  fmt.println( "  texture: ", path, " has ", image_ptr.channels, " channels and is srgb: ", srgb )
+
+
+  fmt.println( "  gl_internal_format: ", gl_format_str( gl_internal_format ) ) 
+  fmt.println( "  gl_format:          ", gl_format_str( i32(gl_format) ) )
+
+
+  // Describe texture.
+  gl.TexImage2D(
+      gl.TEXTURE_2D,      // texture type
+      0,                  // level of detail number (default = 0)
+      gl_internal_format, // gl.RGBA, // texture format
+      image_w,            // width
+      image_h,            // height
+      0,                  // border, must be 0
+      gl_format,          // gl.RGBA, // pixel data format
+      gl.UNSIGNED_BYTE,   // data type of pixel data
+      &pixels[0],         // image data
+  )
+  fmt.println( "  teximage2d" )
+
+  // must be called after glTexImage2D
+  gl.GenerateMipmap(gl.TEXTURE_2D);
+  fmt.println( "  genmipmaps" )
+
+  fmt.println( "finished load -------------" )
   return handle
 }
 

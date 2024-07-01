@@ -1,14 +1,14 @@
 package core
 
-import        "core:fmt"
+// import        "core:fmt"
 import        "core:log"
 import        "core:c"
 import        "core:math"
 import linalg "core:math/linalg/glsl"
-import        "vendor:glfw"
+// import        "vendor:glfw"
 import gl     "vendor:OpenGL"
-import        "core:image"
-import        "core:image/png"
+// import        "core:image"
+// import        "core:image/png"
 import stbi   "vendor:stb/image"
 
 

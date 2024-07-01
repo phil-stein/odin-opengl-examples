@@ -47,14 +47,16 @@ data_t :: struct
   time_scale        : f32,
 
   window: glfw.WindowHandle,
-  window_width  : int,
-  window_height : int,
-
+  window_width   : int,
+  window_height  : int,
+  monitor_width  : int,
+  monitor_height : int,
 
   quad_vao : u32,
   quad_vbo : u32,
 
   global_shader         : u32,
+  quad_shader           : u32,
   equirect_shader       : u32,
   irradiance_map_shader : u32,
   prefilter_shader      : u32,

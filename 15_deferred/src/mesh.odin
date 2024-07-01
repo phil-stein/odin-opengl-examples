@@ -1,13 +1,13 @@
 package core
 
 import        "core:fmt"
-import        "core:c"
-import        "core:time"
-import        "core:math"
+// import        "core:c"
+// import        "core:time"
+// import        "core:math"
 import linalg "core:math/linalg/glsl"
-import        "core:os"
-import        "core:runtime"
-import        "vendor:glfw"
+// import        "core:os"
+// import        "core:runtime"
+// import        "vendor:glfw"
 import gl     "vendor:OpenGL"
 
 import fbx    "../external/ufbx"
@@ -128,23 +128,21 @@ mesh_load_fbx :: proc( path: cstring ) -> ( mesh: mesh_t )
       // @NOTE: flip to go from blender coord sys to the engines
       append( &vertices, f32(pos.x) )
       append( &vertices, f32(pos.z) )
-      append( &vertices, f32(pos.y) )
+      append( &vertices, f32(-pos.y) )
 
       append( &vertices, f32(uv.x) )
       append( &vertices, f32(1.0 - uv.y) )  // flip bc. opengl loads textures flipped
 
-      // fmt.println( "normal: ", normal )
       append( &vertices, f32(normal.x) )
       append( &vertices, f32(normal.z) )
-      append( &vertices, f32(normal.y) )
-
+      append( &vertices, f32(-normal.y) )
 
       // arrput((*verts), (f32)tan[0]);
       // arrput((*verts), (f32)tan[2]);
       // arrput((*verts), (f32)-tan[1]);
       append( &vertices, f32(tan.x) )
       append( &vertices, f32(tan.z) )
-      append( &vertices, f32(tan.y) )
+      append( &vertices, f32(-tan.y) )
     }
 
   }
