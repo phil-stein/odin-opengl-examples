@@ -21,12 +21,13 @@ mesh_t :: struct
 mesh_load_fbx :: proc( path: cstring ) -> ( mesh: mesh_t )
 {
   // Load the .fbx file
-  opts := fbx.Load_Opts{}
-  err := fbx.Error{}
+  opts  := fbx.Load_Opts{}
+  err   := fbx.Error{}
   scene := fbx.load_file(path, &opts, &err)
   if scene == nil 
   {
     fmt.printf("%s\n", err.description.data)
+    fmt.println( "path: ", path )
     panic("Failed to load")
   }
   defer fbx.free_scene( scene )

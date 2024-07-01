@@ -433,7 +433,6 @@ gl_format_str :: proc( format: i32 ) -> string
 }
 make_texture :: proc( path: string, srgb: bool ) -> ( handle: u32 )
 {
-  fmt.println( "started load --------------" )
   // Load image at compile time
   // image_file_bytes := #load( "../assets/texture_01.png" )
   image_file_bytes, ok := os.read_entire_file( path, context.allocator )
@@ -467,8 +466,6 @@ make_texture :: proc( path: string, srgb: bool ) -> ( handle: u32 )
   {
       pixels[i] = b
   }
-  fmt.println( "  loaded image: ", path )
-
   gl.GenTextures( 1, &handle )
   gl.BindTexture( gl.TEXTURE_2D, handle )
 
@@ -479,8 +476,6 @@ make_texture :: proc( path: string, srgb: bool ) -> ( handle: u32 )
   // Texture filtering options.
   gl.TexParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR)
   gl.TexParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR)
-
-  fmt.println( "  set wrapping" )
 
 
   gl_internal_format : i32 = srgb ? gl.SRGB_ALPHA : gl.RGBA
@@ -509,12 +504,6 @@ make_texture :: proc( path: string, srgb: bool ) -> ( handle: u32 )
       os.exit( 1 )
   }
   assert( image_ptr.channels >= 1 && image_ptr.channels <= 4, "texture has incorrect channel amount" )
-  fmt.println( "  texture: ", path, " has ", image_ptr.channels, " channels and is srgb: ", srgb )
-
-
-  fmt.println( "  gl_internal_format: ", gl_format_str( gl_internal_format ) ) 
-  fmt.println( "  gl_format:          ", gl_format_str( i32(gl_format) ) )
-
 
   // Describe texture.
   gl.TexImage2D(
@@ -528,13 +517,10 @@ make_texture :: proc( path: string, srgb: bool ) -> ( handle: u32 )
       gl.UNSIGNED_BYTE,   // data type of pixel data
       &pixels[0],         // image data
   )
-  fmt.println( "  teximage2d" )
 
   // must be called after glTexImage2D
   gl.GenerateMipmap(gl.TEXTURE_2D);
-  fmt.println( "  genmipmaps" )
 
-  fmt.println( "finished load -------------" )
   return handle
 }
 
