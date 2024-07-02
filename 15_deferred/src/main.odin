@@ -1,13 +1,9 @@
 package core
 
 import        "core:fmt"
-// import        "core:c"
-// import        "core:time"
 import        "core:math"
 import linalg "core:math/linalg/glsl"
 import        "core:os"
-// import        "core:runtime"
-// import        "core:slice"
 import        "vendor:glfw"
 import gl     "vendor:OpenGL"
 import        "core:image"
@@ -332,27 +328,17 @@ main :: proc()
       gl.Enable( gl.CULL_FACE )
     }
 
-    // draw_quad( linalg.vec2{ 0.5, 0.5 }, linalg.vec2{ 0.5, 0.5 }, blank_tex )
 
-    // fmt.println( data.cubemap.prefilter )
-    // fmt.println( data.cubemap.irradiance )
-    // fmt.println( data.brdf_lut )
-    // draw_quad( linalg.vec2{  0.55,  0.55 }, linalg.vec2{ 0.45, 0.45 }, data.cubemap.irradiance )
-    // draw_quad( linalg.vec2{ -0.55,  0.55 }, linalg.vec2{ 0.45, 0.45 }, data.cubemap.prefilter )
-    // draw_quad( linalg.vec2{ -0.55, -0.55 }, linalg.vec2{ 0.45, 0.45 }, data.brdf_lut )
-    
-    // draw_quad( linalg.vec2{ -0.55,  0.55 }, linalg.vec2{ 0.45, 0.45 }, data.fb_deferred.buffer02 )
-    // draw_quad( linalg.vec2{  0.55,  0.55 }, linalg.vec2{ 0.45, 0.45 }, data.fb_lighting.buffer01 )
+    // draw the gbuffer and lighting buffer onto screen as quads
+    quad_size :: linalg.vec2{ 0.25, -0.25 }
+    draw_quad( linalg.vec2{ -0.75,  0.75 }, quad_size, data.fb_deferred.buffer01 )
+    draw_quad( linalg.vec2{ -0.75,  0.25 }, quad_size, data.fb_deferred.buffer02 )
+    draw_quad( linalg.vec2{ -0.75, -0.25 }, quad_size, data.fb_deferred.buffer03 )
+    draw_quad( linalg.vec2{ -0.75, -0.75 }, quad_size, data.fb_deferred.buffer04 )
+    draw_quad( linalg.vec2{ -0.25,  0.75 }, quad_size, data.fb_lighting.buffer01 )
 
     glfw.SwapBuffers( data.window )
     
-    // fmt.println( len(data.entity_arr) )
-    // fmt.println( cap(data.entity_arr) )
-    // // clear( &data.entity_arr )
-    // free( &data.entity_arr )
-    // fmt.println( len(data.entity_arr) )
-    // fmt.println( cap(data.entity_arr) )
-
     data_post_update()
     input_update()
   }
