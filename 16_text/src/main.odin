@@ -60,6 +60,7 @@ main :: proc()
 
   // text_load_glyph( '#', 100 )
 
+  // atlas_handle, atlas_w, atlas_h := text_make_atlas( "C:/Windows/Fonts/arialbd.ttf", 30 )
   atlas_handle, atlas_w, atlas_h := text_make_atlas( "assets/JetBrainsMonoNL-Regular.ttf", 30 )
 
   // opengl state
