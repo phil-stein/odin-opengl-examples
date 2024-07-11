@@ -188,7 +188,7 @@ main :: proc()
   gl.ClearColor( 0.0, 0.0, 0.0, 1.0 )
 
   // ---- main loop ----
-  for ( !window_should_close() )
+  for !window_should_close()
   {
     glfw.PollEvents();
       
