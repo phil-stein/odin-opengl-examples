@@ -9,7 +9,7 @@ resources: [odin docs](https://odin-lang.org/docs/), [bg-thompson: OpenGL-Tutori
 
 external code: [ufbx](https://github.com/ufbx/ufbx), [odin-ufbx](https://github.com/cshenton/odin-ufbx)
 
-assets: [my own texture](https://www.artstation.com/artwork/BX4Xq9), [stylized-brick-002 texture](https://3dtextures.me/2022/01/29/stylized-bricks-002/), cube / sphere / suzanne model made using [blender](https://www.blender.org/) <br>
+assets: [my own texture](https://www.artstation.com/artwork/BX4Xq9), [stylized-brick-002 texture](https://3dtextures.me/2022/01/29/stylized-bricks-002/), [JetBrains Mono](https://github.com/JetBrains/JetBrainsMono), cube / sphere / suzanne model made using [blender](https://www.blender.org/) <br>
 
 ! from __10__ onwards if you get linking errors, recompile 10_ufbx/external/ufbx/ufbx.c -> ufbx.lib / .a, see [odin-ufbx](https://github.com/cshenton/odin-ufbx)<br>
   then copy that library file to any other example using ufbx
