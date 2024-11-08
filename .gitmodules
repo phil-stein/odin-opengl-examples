@@ -1,0 +1,6 @@
+[submodule "18_nuklear/external/odin-nuklear"]
+	path = 18_nuklear/external/odin-nuklear
+	url = https://github.com/cr1sth0fer/odin-nuklear.git
+[submodule "19_imgui/external/odin-imgui"]
+	path = 19_imgui/external/odin-imgui
+	url = git@gitlab.com:L-4/odin-imgui.git

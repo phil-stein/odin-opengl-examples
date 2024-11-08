@@ -31,40 +31,48 @@ assets: [my own texture](https://www.artstation.com/artwork/BX4Xq9), [stylized-b
 | <img src="https://github.com/phil-stein/odin-opengl-examples/blob/main/files/12_normal.png" alt="logo" width="400"> | <img src="https://github.com/phil-stein/odin-opengl-examples/blob/main/files/13_cel.png" alt="logo" width="400">         |
 | __14_pbr__: pbr shading                                                                                             | __15_deferred__: deferred pbr shading                                                                                    |
 | _not yet working_                                                                                                   | <img src="https://github.com/phil-stein/odin-opengl-examples/blob/main/files/15_deferred_02.png" alt="logo" width="400"> |
-| __16_text__: unbatched text rendering using `vendor:stb/truetype`                                                   |                                                                                                                          |
-| <img src="https://github.com/phil-stein/odin-opengl-examples/blob/main/files/16_text.png" alt="logo" width="400">   |                                                                                                                          |
+| __16_text__: unbatched text rendering using `vendor:stb/truetype`                                                   | __17_microui__:                                                                                                          |
+| <img src="https://github.com/phil-stein/odin-opengl-examples/blob/main/files/16_text.png" alt="logo" width="400">   | not working                                                                                                              |
+| __18_nuklear__:                                                                                                     | __19_imgui__:                                                                                                            |
+| not working                                                                                                         | <img src="https://github.com/phil-stein/odin-opengl-examples/blob/main/files/19_imgui.png" alt="logo" width="400">       |
 
 ## todo
   - [ ] hot-reloading, [video_01](https://www.youtube.com/watch?v=HY6Dv0Fbu14), [video_02](https://www.youtube.com/watch?v=KvgNLeaGgWE&t=307s)
   - [ ] [dump stack trace](https://github.com/DaseinPhaos/pdb) or [build-in](https://pkg.odin-lang.org/core/debug/trace/)
   - [ ] [tracking allocator](https://www.youtube.com/watch?v=dg6qogN8kIE)
-  - [ ] temporary allocator
+  - [ ] temporary allocator `WIP`
   - [ ] opengl debugging `WIP` 
     - [x] set callback
     - [ ] print location of error
     - [x] filter errors
   - [ ] text rendering
+    - [x] unbatched
+    - [ ] batched
+    - [ ] 3d
+    - [ ] sdf
   - [ ] pbr `WIP`
   - [x] deferred shading 
   - [ ] tonemapping
   - [ ] microui
   - [ ] nuklear
-  - [ ] anti-aliasing, fxa prob.
-  - [ ] [bloom](https://www.youtube.com/watch?v=ml-5OGZC7vE&t=319s&pp=ygUNb3BlbmdsIGVmZmVjdA%3D%3D)
+  - [ ] debug-renderer
+  - fx
+    - [ ] anti-aliasing, fxa prob.
+    - [ ] [bloom](https://www.youtube.com/watch?v=ml-5OGZC7vE&t=319s&pp=ygUNb3BlbmdsIGVmZmVjdA%3D%3D)
+    - [ ] cascaded shadows
   - [ ] particle system -> instanced rendering, batching, etc.
   - [ ] serialization
   - [ ] skeletal anim, [video_01](https://www.youtube.com/watch?v=ZzMnu3v_MOw), 
-  - [ ] clean up code, add comments
   - [ ] figure out why loading fbx files is so slow
-  - [ ] cascaded shadows
   - [ ] asset manager
+  - [ ] clean up code, add comments
 
 ## maybe
-- [ ] physics 
-- [ ] ray-tracing 
-- [ ] [intersection effect](https://www.youtube.com/watch?v=SiCNFMhDZ1o&list=WL&index=1&pp=gAQBiAQB) 
-- [ ] [shader art](https://www.youtube.com/watch?v=f4s1h2YETNY&t=196s) 
-- [ ] paletization?
-- [ ] [texture optimizations](https://www.youtube.com/watch?v=ElwclNhYW04&pp=ygUUcGFsbGV0aXphdGlvbiBvcGVuZ2w%3D)
-- [ ] [radiance cascades](https://www.youtube.com/watch?v=3so7xdZHKxw)
+  - [ ] physics 
+  - [ ] ray-tracing 
+  - [ ] [intersection effect](https://www.youtube.com/watch?v=SiCNFMhDZ1o&list=WL&index=1&pp=gAQBiAQB) 
+  - [ ] [shader art](https://www.youtube.com/watch?v=f4s1h2YETNY&t=196s) 
+  - [ ] paletization?
+  - [ ] [texture optimizations](https://www.youtube.com/watch?v=ElwclNhYW04&pp=ygUUcGFsbGV0aXphdGlvbiBvcGVuZ2w%3D)
+  - [ ] [radiance cascades](https://www.youtube.com/watch?v=3so7xdZHKxw)
 

@@ -9,6 +9,10 @@ import gl     "vendor:OpenGL"
 WINDOW_TYPE :: enum { MINIMIZED, MAXIMIZED, FULLSCREEN };
 
 
+mesh_t :: struct
+{
+  vao, vbo, ebo : u32,
+}
 
 data_t :: struct
 {
@@ -29,9 +33,7 @@ data_t :: struct
   quad_vao : u32,
   quad_vbo : u32,
   
-  text_vao : u32,
 
-  text_shader            : u32,
   quad_shader            : u32,
   wireframe_mode_enabled : bool,
   
@@ -54,11 +56,17 @@ data_t :: struct
 
   text : struct
   {
-    glyph_size      : i32,
-    last_draw_calls : i32,
-    draw_calls      : i32,
-    font_name       : string,
-    draw_solid      : bool,
+    atlas_tex_handle  : u32,
+    glyph_size        : i32,
+    last_draw_calls   : i32,
+    draw_calls        : i32,
+    font_name         : string,
+    draw_solid        : bool,
+
+    shader            : u32,
+    baked_shader      : u32,
+
+    mesh              : mesh_t,
   }
 }
 data : data_t =
@@ -120,11 +128,14 @@ data_init :: proc()
 
   // shaders --------------------------------------------------------------------------------------------------
 
-  data.quad_shader = shader_make( #load( "../assets/quad.vert", cstring ), 
-                                  #load( "../assets/quad.frag", cstring ), "quad_shader" )
+  data.quad_shader       = shader_make( #load( "../assets/quad.vert", cstring ), 
+                                        #load( "../assets/quad.frag", cstring ), "quad_shader" )
 
-  data.text_shader = shader_make( #load( "../assets/text.vert", cstring ),
-                                  #load( "../assets/text.frag", cstring ), "text_shader" )
+  data.text.shader       = shader_make( #load( "../assets/text.vert", cstring ),
+                                        #load( "../assets/text.frag", cstring ), "text_shader" )
+
+  data.text.baked_shader = shader_make( #load( "../assets/text_baked.vert", cstring ),
+                                        #load( "../assets/text.frag", cstring ), "text_baked_shader" )
   
   // text -----------------------------------------------------------------------------------------------------
 
