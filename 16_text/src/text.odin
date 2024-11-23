@@ -447,22 +447,22 @@ text_bake_string :: proc( str: string, pos: linalg.vec2 ) -> ( text_mesh: mesh_t
     // shader_act_set_f32( "offs", y_offs )
 
 
-    h := f32(data.text.glyph_size * 2) 
-    w := f32(data.text.glyph_size * 2)
-    aPos := [2]f32{ w, h } * proj_mat
-    gl_Position := [4]f32{ aPos.x, aPos.y, 0, 1 }
-    gl_Position *= translation_mat
-    fmt.println( "gl_Position: ", gl_Position )
-
-    rect_verts : [6 * 4]f32 
-    rect_verts = { // rect coords : vec2, texture coords : vec2
-      0, h,    0, 0,
-      0, 0,    0, 1,
-      w, 0,    1, 1,
-      0, h,    0, 0,
-      w, 0,    1, 1,
-      w, h,    1, 0,
-    }
+    // @TODO: 
+    // h := f32(data.text.glyph_size * 2) 
+    // w := f32(data.text.glyph_size * 2)
+    // aPos := [2]f32{ w, h } * proj_mat
+    // gl_Position := [4]f32{ aPos.x, aPos.y, 0, 1 }
+    // gl_Position *= translation_mat
+    // fmt.println( "gl_Position: ", gl_Position )
+    // rect_verts : [6 * 4]f32 
+    // rect_verts = { // rect coords : vec2, texture coords : vec2
+    //   0, h,    0, 0,
+    //   0, 0,    0, 1,
+    //   w, 0,    1, 1,
+    //   0, h,    0, 0,
+    //   w, 0,    1, 1,
+    //   w, h,    1, 0,
+    // }
 
   gl.GenVertexArrays(1, &data.text.mesh.vao)
   gl.BindVertexArray(data.text.mesh.vao)

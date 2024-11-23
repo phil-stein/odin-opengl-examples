@@ -120,7 +120,8 @@ main :: proc()
     text_draw_string( str_len_total_str,                                            linalg.vec2{ -0.95, text_y_pos } ); text_y_pos -= 0.25 
     // fmt.println( "str_len_total: ", str_len_total )
 
-    text_bake_string( "cock",                                                       linalg.vec2{ -0.95, text_y_pos } ); text_y_pos -= 0.25
+    // @TODO:
+    // text_bake_string( "cock",                                                       linalg.vec2{ -0.95, text_y_pos } ); text_y_pos -= 0.25
 
     glfw.SwapBuffers( data.window )
 

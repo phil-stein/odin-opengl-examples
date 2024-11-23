@@ -23,7 +23,7 @@ data_t :: struct
   time_scale        : f32,
   cur_frame         : i32,
 
-  window: glfw.WindowHandle,
+  window         : glfw.WindowHandle,
   window_width   : int,
   window_height  : int,
   monitor_width  : int,

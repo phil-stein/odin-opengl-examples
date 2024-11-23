@@ -38,20 +38,25 @@ assets: [my own texture](https://www.artstation.com/artwork/BX4Xq9), [stylized-b
 
 ## todo
   - [ ] hot-reloading, [video_01](https://www.youtube.com/watch?v=HY6Dv0Fbu14), [video_02](https://www.youtube.com/watch?v=KvgNLeaGgWE&t=307s)
-  - [ ] [dump stack trace](https://github.com/DaseinPhaos/pdb) or [build-in](https://pkg.odin-lang.org/core/debug/trace/)
+  - [ ] dump stack trace
+    - [X] [build-in](https://pkg.odin-lang.org/core/debug/trace/)
+    - [X] [dump stack trace](https://github.com/DaseinPhaos/pdb) `doesnt work` 
   - [ ] [tracking allocator](https://www.youtube.com/watch?v=dg6qogN8kIE)
   - [ ] temporary allocator `WIP`
+  - [X] [reflection](https://pkg.odin-lang.org/core/reflect/)
+    - [X] get all names of struct members
+    - [X] set struct members
   - [ ] opengl debugging `WIP` 
-    - [x] set callback
+    - [X] set callback
     - [ ] print location of error
-    - [x] filter errors
+    - [X] filter errors
   - [ ] text rendering
-    - [x] unbatched
+    - [X] unbatched
     - [ ] batched
     - [ ] 3d
     - [ ] sdf
   - [ ] pbr `WIP`
-  - [x] deferred shading 
+  - [X] deferred shading 
   - [ ] tonemapping
   - [ ] microui
   - [ ] nuklear
