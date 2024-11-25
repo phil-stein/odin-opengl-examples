@@ -65,6 +65,30 @@ test := test_t{
   str_00 = "cock",
 }
 
+struct_a_t :: struct
+{
+  i_00 : int,
+  i_01 : int,
+  i_02 : int,
+
+  f_00 : f32,
+
+  str_00 : string,
+  
+  arr : [3]int,
+
+  var : u32,
+  
+  b : struct_b_t,
+  
+}
+struct_b_t :: struct
+{
+  i_00 : int,
+  f_00 : f32,
+  arr  : [4]f32
+}
+
 
 main :: proc() 
 {
@@ -119,7 +143,18 @@ main :: proc()
     fmt.println( sf.name, ":", sf.type, ", offset:", sf.offset )
   }
 
+  fmt.println( "----------------------------------------------" )
+
+  _struct := struct_a_t{
+    i_01 = 1,
+    i_02 = 2,
+    str_00 = "hello",
+    arr = { 123, 3, 6 },
+  }
+  display_struct_members( _struct, "_struct" )
+
 }
+// simple
 print_struct_info :: proc( T: typeid, value: any )
 {
   // print <name> : <type> = <value>
@@ -129,6 +164,54 @@ print_struct_info :: proc( T: typeid, value: any )
   {
     v := reflect.struct_field_value_by_name( value, names_arr[i] )
     fmt.println( names_arr[i], ":", t, "=", v , " | ", reflect.is_integer( t ) )
+  }
+}
+
+// complex
+display_struct_members :: proc( value: any, name: string, indent_idx := 1 )
+{
+  fmt.printfln( "%s : %s", name, value.id )
+
+  types_arr  := reflect.struct_field_types( value.id )
+  names_arr  := reflect.struct_field_names( value.id )
+  for type, i in types_arr
+  {
+    v := reflect.struct_field_value_by_name( value, names_arr[i] )
+    display_type_info( type, v, names_arr[i], indent_idx )
+  }
+}
+display_any :: #force_inline proc( v: any, name: string, indent_idx := 0 )
+{
+  display_type_info( type_info_of( v.id ), v, name, indent_idx )
+}
+display_type_info :: proc( type: ^reflect.Type_Info, v: any, name: string, indent_idx := 0 )
+{
+  for i in 0 ..< indent_idx
+  {
+    fmt.print( "| " )
+  }
+
+  switch
+  {
+    case reflect.is_array( type ) || reflect.is_dynamic_array( type ):
+    {
+      for idx := 0; idx < reflect.length( v ); idx += 1
+      { 
+        val : any
+        ok  : bool
+        _idx := idx
+        val, _idx, ok = reflect.iterate_array( v, &_idx )
+        if !ok { break }
+        fmt.print( "\r" ) // already printed the |, this overwrites it
+        display_any( val, fmt.tprintf( "%s[%d]", name, idx ), indent_idx /* +1 */ )
+      }
+    }
+    case reflect.is_struct( type ):
+    {
+      display_struct_members( v, name, indent_idx +1 )
+    }
+    case: 
+    { fmt.printf( "%s : %s = %v, %d\n", name, type, v, indent_idx ) }
   }
 }
 
