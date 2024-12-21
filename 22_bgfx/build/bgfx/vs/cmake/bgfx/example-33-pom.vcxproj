@@ -1,0 +1,523 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{12219B1E-154E-371C-AE56-99A8C2504453}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>example-33-pom</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Workspace\C\fisch_bgfx\_bin\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">example-33-pom.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">example-33-pom</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Workspace\C\fisch_bgfx\_bin\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">example-33-pom.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">example-33-pom</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Workspace\C\fisch_bgfx\_bin\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">example-33-pom.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">example-33-pom</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Workspace\C\fisch_bgfx\_bin\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">example-33-pom.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">example-33-pom</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\examples\common;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\3rdparty;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\include\compat\msvc;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bimg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /Zc:__cplusplus</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;_CRT_SECURE_NO_WARNINGS;__STDC_FORMAT_MACROS;ENTRY_CONFIG_IMPLEMENT_MAIN=1;BX_CONFIG_DEBUG=1;BGFX_CONFIG_DEBUG_ANNOTATION=1;BGFX_CONFIG_MULTITHREADED=1;__STDC_LIMIT_MACROS;__STDC_CONSTANT_MACROS;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;__STDC_FORMAT_MACROS;ENTRY_CONFIG_IMPLEMENT_MAIN=1;BX_CONFIG_DEBUG=1;BGFX_CONFIG_DEBUG_ANNOTATION=1;BGFX_CONFIG_MULTITHREADED=1;__STDC_LIMIT_MACROS;__STDC_CONSTANT_MACROS;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\examples\common;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\3rdparty;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\include\compat\msvc;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bimg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\examples\common;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\3rdparty;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\include\compat\msvc;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bimg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>Debug\example-common.lib;Debug\bgfx.lib;..\bimg\Debug\bimg.lib;..\bimg\Debug\bimg_decode.lib;..\bx\Debug\bx.lib;psapi.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Workspace/C/fisch_bgfx/_build/bgfx/vs/cmake/bgfx/Debug/example-33-pom.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Workspace/C/fisch_bgfx/_bin/Debug/example-33-pom.pdb</ProgramDataBaseFile>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\examples\common;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\3rdparty;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\include\compat\msvc;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bimg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /Zc:__cplusplus</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;__STDC_FORMAT_MACROS;ENTRY_CONFIG_IMPLEMENT_MAIN=1;BX_CONFIG_DEBUG=0;BGFX_CONFIG_DEBUG_ANNOTATION=0;BGFX_CONFIG_MULTITHREADED=1;__STDC_LIMIT_MACROS;__STDC_CONSTANT_MACROS;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;__STDC_FORMAT_MACROS;ENTRY_CONFIG_IMPLEMENT_MAIN=1;BX_CONFIG_DEBUG=0;BGFX_CONFIG_DEBUG_ANNOTATION=0;BGFX_CONFIG_MULTITHREADED=1;__STDC_LIMIT_MACROS;__STDC_CONSTANT_MACROS;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\examples\common;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\3rdparty;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\include\compat\msvc;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bimg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\examples\common;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\3rdparty;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\include\compat\msvc;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bimg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>Release\example-common.lib;Release\bgfx.lib;..\bimg\Release\bimg.lib;..\bimg\Release\bimg_decode.lib;..\bx\Release\bx.lib;psapi.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Workspace/C/fisch_bgfx/_build/bgfx/vs/cmake/bgfx/Release/example-33-pom.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Workspace/C/fisch_bgfx/_bin/Release/example-33-pom.pdb</ProgramDataBaseFile>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\examples\common;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\3rdparty;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\include\compat\msvc;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bimg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /Zc:__cplusplus</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;__STDC_FORMAT_MACROS;ENTRY_CONFIG_IMPLEMENT_MAIN=1;BX_CONFIG_DEBUG=0;BGFX_CONFIG_DEBUG_ANNOTATION=0;BGFX_CONFIG_MULTITHREADED=1;__STDC_LIMIT_MACROS;__STDC_CONSTANT_MACROS;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;__STDC_FORMAT_MACROS;ENTRY_CONFIG_IMPLEMENT_MAIN=1;BX_CONFIG_DEBUG=0;BGFX_CONFIG_DEBUG_ANNOTATION=0;BGFX_CONFIG_MULTITHREADED=1;__STDC_LIMIT_MACROS;__STDC_CONSTANT_MACROS;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\examples\common;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\3rdparty;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\include\compat\msvc;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bimg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\examples\common;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\3rdparty;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\include\compat\msvc;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bimg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>MinSizeRel\example-common.lib;MinSizeRel\bgfx.lib;..\bimg\MinSizeRel\bimg.lib;..\bimg\MinSizeRel\bimg_decode.lib;..\bx\MinSizeRel\bx.lib;psapi.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Workspace/C/fisch_bgfx/_build/bgfx/vs/cmake/bgfx/MinSizeRel/example-33-pom.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Workspace/C/fisch_bgfx/_bin/MinSizeRel/example-33-pom.pdb</ProgramDataBaseFile>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\examples\common;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\3rdparty;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\include\compat\msvc;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bimg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /Zc:__cplusplus</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;__STDC_FORMAT_MACROS;ENTRY_CONFIG_IMPLEMENT_MAIN=1;BX_CONFIG_DEBUG=0;BGFX_CONFIG_DEBUG_ANNOTATION=0;BGFX_CONFIG_MULTITHREADED=1;__STDC_LIMIT_MACROS;__STDC_CONSTANT_MACROS;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;__STDC_FORMAT_MACROS;ENTRY_CONFIG_IMPLEMENT_MAIN=1;BX_CONFIG_DEBUG=0;BGFX_CONFIG_DEBUG_ANNOTATION=0;BGFX_CONFIG_MULTITHREADED=1;__STDC_LIMIT_MACROS;__STDC_CONSTANT_MACROS;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\examples\common;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\3rdparty;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\include\compat\msvc;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bimg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\examples\common;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\3rdparty;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\include\compat\msvc;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bimg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>RelWithDebInfo\example-common.lib;RelWithDebInfo\bgfx.lib;..\bimg\RelWithDebInfo\bimg.lib;..\bimg\RelWithDebInfo\bimg_decode.lib;..\bx\RelWithDebInfo\bx.lib;psapi.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Workspace/C/fisch_bgfx/_build/bgfx/vs/cmake/bgfx/RelWithDebInfo/example-33-pom.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Workspace/C/fisch_bgfx/_bin/RelWithDebInfo/example-33-pom.pdb</ProgramDataBaseFile>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\examples\33-pom\fs_pom.sc">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Compiling shader 33-pom/fs_pom.sc for DX11, ESSL, GLSL, SPIRV</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+C:\Workspace\C\fisch_bgfx\_bin\Debug\shaderc.exe -f C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/33-pom/fs_pom.sc -i C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src -o C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/dx11/fs_pom.bin --platform windows --type fragment --profile s_5_0 -O 3
+if %errorlevel% neq 0 goto :cmEnd
+C:\Workspace\C\fisch_bgfx\_bin\Debug\shaderc.exe -f C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/33-pom/fs_pom.sc -i C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src -o C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/essl/fs_pom.bin --platform android --type fragment --profile 100_es
+if %errorlevel% neq 0 goto :cmEnd
+C:\Workspace\C\fisch_bgfx\_bin\Debug\shaderc.exe -f C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/33-pom/fs_pom.sc -i C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src -o C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/glsl/fs_pom.bin --type fragment --profile 140
+if %errorlevel% neq 0 goto :cmEnd
+C:\Workspace\C\fisch_bgfx\_bin\Debug\shaderc.exe -f C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/33-pom/fs_pom.sc -i C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src -o C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/spirv/fs_pom.bin --type fragment --profile spirv
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\examples\runtime\shaders\dx11\fs_pom.bin;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\examples\runtime\shaders\essl\fs_pom.bin;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\examples\runtime\shaders\glsl\fs_pom.bin;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\examples\runtime\shaders\spirv\fs_pom.bin</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Compiling shader 33-pom/fs_pom.sc for DX11, ESSL, GLSL, SPIRV</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+C:\Workspace\C\fisch_bgfx\_bin\Release\shaderc.exe -f C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/33-pom/fs_pom.sc -i C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src -o C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/dx11/fs_pom.bin --platform windows --type fragment --profile s_5_0 -O 3
+if %errorlevel% neq 0 goto :cmEnd
+C:\Workspace\C\fisch_bgfx\_bin\Release\shaderc.exe -f C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/33-pom/fs_pom.sc -i C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src -o C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/essl/fs_pom.bin --platform android --type fragment --profile 100_es
+if %errorlevel% neq 0 goto :cmEnd
+C:\Workspace\C\fisch_bgfx\_bin\Release\shaderc.exe -f C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/33-pom/fs_pom.sc -i C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src -o C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/glsl/fs_pom.bin --type fragment --profile 140
+if %errorlevel% neq 0 goto :cmEnd
+C:\Workspace\C\fisch_bgfx\_bin\Release\shaderc.exe -f C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/33-pom/fs_pom.sc -i C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src -o C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/spirv/fs_pom.bin --type fragment --profile spirv
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\examples\runtime\shaders\dx11\fs_pom.bin;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\examples\runtime\shaders\essl\fs_pom.bin;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\examples\runtime\shaders\glsl\fs_pom.bin;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\examples\runtime\shaders\spirv\fs_pom.bin</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Compiling shader 33-pom/fs_pom.sc for DX11, ESSL, GLSL, SPIRV</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+C:\Workspace\C\fisch_bgfx\_bin\MinSizeRel\shaderc.exe -f C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/33-pom/fs_pom.sc -i C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src -o C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/dx11/fs_pom.bin --platform windows --type fragment --profile s_5_0 -O 3
+if %errorlevel% neq 0 goto :cmEnd
+C:\Workspace\C\fisch_bgfx\_bin\MinSizeRel\shaderc.exe -f C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/33-pom/fs_pom.sc -i C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src -o C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/essl/fs_pom.bin --platform android --type fragment --profile 100_es
+if %errorlevel% neq 0 goto :cmEnd
+C:\Workspace\C\fisch_bgfx\_bin\MinSizeRel\shaderc.exe -f C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/33-pom/fs_pom.sc -i C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src -o C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/glsl/fs_pom.bin --type fragment --profile 140
+if %errorlevel% neq 0 goto :cmEnd
+C:\Workspace\C\fisch_bgfx\_bin\MinSizeRel\shaderc.exe -f C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/33-pom/fs_pom.sc -i C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src -o C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/spirv/fs_pom.bin --type fragment --profile spirv
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\examples\runtime\shaders\dx11\fs_pom.bin;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\examples\runtime\shaders\essl\fs_pom.bin;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\examples\runtime\shaders\glsl\fs_pom.bin;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\examples\runtime\shaders\spirv\fs_pom.bin</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Compiling shader 33-pom/fs_pom.sc for DX11, ESSL, GLSL, SPIRV</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+C:\Workspace\C\fisch_bgfx\_bin\RelWithDebInfo\shaderc.exe -f C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/33-pom/fs_pom.sc -i C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src -o C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/dx11/fs_pom.bin --platform windows --type fragment --profile s_5_0 -O 3
+if %errorlevel% neq 0 goto :cmEnd
+C:\Workspace\C\fisch_bgfx\_bin\RelWithDebInfo\shaderc.exe -f C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/33-pom/fs_pom.sc -i C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src -o C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/essl/fs_pom.bin --platform android --type fragment --profile 100_es
+if %errorlevel% neq 0 goto :cmEnd
+C:\Workspace\C\fisch_bgfx\_bin\RelWithDebInfo\shaderc.exe -f C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/33-pom/fs_pom.sc -i C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src -o C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/glsl/fs_pom.bin --type fragment --profile 140
+if %errorlevel% neq 0 goto :cmEnd
+C:\Workspace\C\fisch_bgfx\_bin\RelWithDebInfo\shaderc.exe -f C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/33-pom/fs_pom.sc -i C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src -o C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/spirv/fs_pom.bin --type fragment --profile spirv
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\examples\runtime\shaders\dx11\fs_pom.bin;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\examples\runtime\shaders\essl\fs_pom.bin;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\examples\runtime\shaders\glsl\fs_pom.bin;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\examples\runtime\shaders\spirv\fs_pom.bin</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\examples\33-pom\vs_pom.sc">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Compiling shader 33-pom/vs_pom.sc for DX11, ESSL, GLSL, SPIRV</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+C:\Workspace\C\fisch_bgfx\_bin\Debug\shaderc.exe -f C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/33-pom/vs_pom.sc -i C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src -o C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/dx11/vs_pom.bin --platform windows --type vertex --profile s_5_0 -O 3
+if %errorlevel% neq 0 goto :cmEnd
+C:\Workspace\C\fisch_bgfx\_bin\Debug\shaderc.exe -f C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/33-pom/vs_pom.sc -i C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src -o C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/essl/vs_pom.bin --platform android --type vertex --profile 100_es
+if %errorlevel% neq 0 goto :cmEnd
+C:\Workspace\C\fisch_bgfx\_bin\Debug\shaderc.exe -f C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/33-pom/vs_pom.sc -i C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src -o C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/glsl/vs_pom.bin --type vertex --profile 140
+if %errorlevel% neq 0 goto :cmEnd
+C:\Workspace\C\fisch_bgfx\_bin\Debug\shaderc.exe -f C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/33-pom/vs_pom.sc -i C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src -o C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/spirv/vs_pom.bin --type vertex --profile spirv
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\examples\runtime\shaders\dx11\vs_pom.bin;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\examples\runtime\shaders\essl\vs_pom.bin;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\examples\runtime\shaders\glsl\vs_pom.bin;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\examples\runtime\shaders\spirv\vs_pom.bin</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Compiling shader 33-pom/vs_pom.sc for DX11, ESSL, GLSL, SPIRV</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+C:\Workspace\C\fisch_bgfx\_bin\Release\shaderc.exe -f C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/33-pom/vs_pom.sc -i C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src -o C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/dx11/vs_pom.bin --platform windows --type vertex --profile s_5_0 -O 3
+if %errorlevel% neq 0 goto :cmEnd
+C:\Workspace\C\fisch_bgfx\_bin\Release\shaderc.exe -f C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/33-pom/vs_pom.sc -i C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src -o C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/essl/vs_pom.bin --platform android --type vertex --profile 100_es
+if %errorlevel% neq 0 goto :cmEnd
+C:\Workspace\C\fisch_bgfx\_bin\Release\shaderc.exe -f C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/33-pom/vs_pom.sc -i C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src -o C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/glsl/vs_pom.bin --type vertex --profile 140
+if %errorlevel% neq 0 goto :cmEnd
+C:\Workspace\C\fisch_bgfx\_bin\Release\shaderc.exe -f C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/33-pom/vs_pom.sc -i C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src -o C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/spirv/vs_pom.bin --type vertex --profile spirv
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\examples\runtime\shaders\dx11\vs_pom.bin;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\examples\runtime\shaders\essl\vs_pom.bin;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\examples\runtime\shaders\glsl\vs_pom.bin;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\examples\runtime\shaders\spirv\vs_pom.bin</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Compiling shader 33-pom/vs_pom.sc for DX11, ESSL, GLSL, SPIRV</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+C:\Workspace\C\fisch_bgfx\_bin\MinSizeRel\shaderc.exe -f C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/33-pom/vs_pom.sc -i C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src -o C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/dx11/vs_pom.bin --platform windows --type vertex --profile s_5_0 -O 3
+if %errorlevel% neq 0 goto :cmEnd
+C:\Workspace\C\fisch_bgfx\_bin\MinSizeRel\shaderc.exe -f C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/33-pom/vs_pom.sc -i C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src -o C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/essl/vs_pom.bin --platform android --type vertex --profile 100_es
+if %errorlevel% neq 0 goto :cmEnd
+C:\Workspace\C\fisch_bgfx\_bin\MinSizeRel\shaderc.exe -f C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/33-pom/vs_pom.sc -i C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src -o C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/glsl/vs_pom.bin --type vertex --profile 140
+if %errorlevel% neq 0 goto :cmEnd
+C:\Workspace\C\fisch_bgfx\_bin\MinSizeRel\shaderc.exe -f C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/33-pom/vs_pom.sc -i C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src -o C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/spirv/vs_pom.bin --type vertex --profile spirv
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\examples\runtime\shaders\dx11\vs_pom.bin;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\examples\runtime\shaders\essl\vs_pom.bin;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\examples\runtime\shaders\glsl\vs_pom.bin;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\examples\runtime\shaders\spirv\vs_pom.bin</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Compiling shader 33-pom/vs_pom.sc for DX11, ESSL, GLSL, SPIRV</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+C:\Workspace\C\fisch_bgfx\_bin\RelWithDebInfo\shaderc.exe -f C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/33-pom/vs_pom.sc -i C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src -o C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/dx11/vs_pom.bin --platform windows --type vertex --profile s_5_0 -O 3
+if %errorlevel% neq 0 goto :cmEnd
+C:\Workspace\C\fisch_bgfx\_bin\RelWithDebInfo\shaderc.exe -f C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/33-pom/vs_pom.sc -i C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src -o C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/essl/vs_pom.bin --platform android --type vertex --profile 100_es
+if %errorlevel% neq 0 goto :cmEnd
+C:\Workspace\C\fisch_bgfx\_bin\RelWithDebInfo\shaderc.exe -f C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/33-pom/vs_pom.sc -i C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src -o C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/glsl/vs_pom.bin --type vertex --profile 140
+if %errorlevel% neq 0 goto :cmEnd
+C:\Workspace\C\fisch_bgfx\_bin\RelWithDebInfo\shaderc.exe -f C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/33-pom/vs_pom.sc -i C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src -o C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/spirv/vs_pom.bin --type vertex --profile spirv
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\examples\runtime\shaders\dx11\vs_pom.bin;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\examples\runtime\shaders\essl\vs_pom.bin;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\examples\runtime\shaders\glsl\vs_pom.bin;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\examples\runtime\shaders\spirv\vs_pom.bin</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/cmake/bgfx/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Workspace/C/fisch_bgfx/_build/make -BC:/Workspace/C/fisch_bgfx/_build/vs22 --check-stamp-file C:/Workspace/C/fisch_bgfx/_build/bgfx/vs/cmake/bgfx/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files\CMake\share\cmake-3.29\Modules\CMakeParseArguments.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\dear-imgui.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\fcpp.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\glsl-optimizer.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\glslang.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\meshoptimizer.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\spirv-cross.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\spirv-opt.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\webgpu.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\bgfx.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\examples.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\generated\shader.cpp.in;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\generated\vertexlayout.cpp.in;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\geometryc.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\geometryv.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\shaderc.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\shared.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\texturev.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\util\ConfigureDebugging.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfxToolUtils.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/cmake/bgfx/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Workspace/C/fisch_bgfx/_build/make -BC:/Workspace/C/fisch_bgfx/_build/vs22 --check-stamp-file C:/Workspace/C/fisch_bgfx/_build/bgfx/vs/cmake/bgfx/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\CMake\share\cmake-3.29\Modules\CMakeParseArguments.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\dear-imgui.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\fcpp.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\glsl-optimizer.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\glslang.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\meshoptimizer.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\spirv-cross.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\spirv-opt.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\webgpu.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\bgfx.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\examples.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\generated\shader.cpp.in;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\generated\vertexlayout.cpp.in;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\geometryc.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\geometryv.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\shaderc.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\shared.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\texturev.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\util\ConfigureDebugging.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfxToolUtils.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/cmake/bgfx/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Workspace/C/fisch_bgfx/_build/make -BC:/Workspace/C/fisch_bgfx/_build/vs22 --check-stamp-file C:/Workspace/C/fisch_bgfx/_build/bgfx/vs/cmake/bgfx/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Program Files\CMake\share\cmake-3.29\Modules\CMakeParseArguments.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\dear-imgui.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\fcpp.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\glsl-optimizer.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\glslang.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\meshoptimizer.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\spirv-cross.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\spirv-opt.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\webgpu.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\bgfx.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\examples.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\generated\shader.cpp.in;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\generated\vertexlayout.cpp.in;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\geometryc.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\geometryv.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\shaderc.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\shared.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\texturev.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\util\ConfigureDebugging.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfxToolUtils.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/cmake/bgfx/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Workspace/C/fisch_bgfx/_build/make -BC:/Workspace/C/fisch_bgfx/_build/vs22 --check-stamp-file C:/Workspace/C/fisch_bgfx/_build/bgfx/vs/cmake/bgfx/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Program Files\CMake\share\cmake-3.29\Modules\CMakeParseArguments.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\dear-imgui.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\fcpp.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\glsl-optimizer.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\glslang.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\meshoptimizer.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\spirv-cross.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\spirv-opt.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\webgpu.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\bgfx.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\examples.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\generated\shader.cpp.in;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\generated\vertexlayout.cpp.in;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\geometryc.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\geometryv.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\shaderc.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\shared.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\texturev.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\util\ConfigureDebugging.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfxToolUtils.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\examples\33-pom\pom.cpp" />
+    <None Include="C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\examples\33-pom\varying.def.sc">
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Workspace\C\fisch_bgfx\_build\vs22\ZERO_CHECK.vcxproj">
+      <Project>{8192A4C1-2856-3F5B-B1FA-309112B0BDC1}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\bgfx.vcxproj">
+      <Project>{5FBDADAA-FD01-3C9C-8806-159092E2108A}</Project>
+      <Name>bgfx</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bimg\bimg.vcxproj">
+      <Project>{2886E597-BBC1-3E2A-B88A-F0CE665E94E3}</Project>
+      <Name>bimg</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bimg\bimg_decode.vcxproj">
+      <Project>{94662B14-BDED-3B2F-B74E-E991F47D2197}</Project>
+      <Name>bimg_decode</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bx\bx.vcxproj">
+      <Project>{7810ADBF-6E31-3CE0-B6D7-E3D631F90D17}</Project>
+      <Name>bx</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\example-common.vcxproj">
+      <Project>{00BD39B5-43FF-3D44-91E8-24644D6596DB}</Project>
+      <Name>example-common</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\shaderc.vcxproj">
+      <Project>{F9EDBA13-A017-3D55-8D44-78F2DD5684EF}</Project>
+      <Name>shaderc</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

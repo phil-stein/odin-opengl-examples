@@ -1,0 +1,31 @@
+C:/Workspace/C/fisch_bgfx/_build/bgfx/mingw64/cmake/bgfx/CMakeFiles/geometryc.dir/C_/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/3rdparty/meshoptimizer/src/indexcodec.cpp.obj: \
+ C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\meshoptimizer\src\indexcodec.cpp \
+ C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\meshoptimizer\src\meshoptimizer.h \
+ C:/MinGW64/mingw64/x86_64-w64-mingw32/include/assert.h \
+ C:/MinGW64/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
+ C:/MinGW64/mingw64/x86_64-w64-mingw32/include/corecrt.h \
+ C:/MinGW64/mingw64/x86_64-w64-mingw32/include/_mingw.h \
+ C:/MinGW64/mingw64/x86_64-w64-mingw32/include/_mingw_mac.h \
+ C:/MinGW64/mingw64/x86_64-w64-mingw32/include/_mingw_secapi.h \
+ C:/MinGW64/mingw64/x86_64-w64-mingw32/include/vadefs.h \
+ C:/MinGW64/mingw64/x86_64-w64-mingw32/include/sdks/_mingw_ddk.h \
+ C:/MinGW64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/c++/stdlib.h \
+ C:/MinGW64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/c++/cstdlib \
+ C:/MinGW64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
+ C:/MinGW64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/c++/x86_64-w64-mingw32/bits/os_defines.h \
+ C:/MinGW64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/c++/x86_64-w64-mingw32/bits/cpu_defines.h \
+ C:/MinGW64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/c++/pstl/pstl_config.h \
+ C:/MinGW64/mingw64/x86_64-w64-mingw32/include/stdlib.h \
+ C:/MinGW64/mingw64/x86_64-w64-mingw32/include/corecrt_wstdlib.h \
+ C:/MinGW64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/limits.h \
+ C:/MinGW64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/syslimits.h \
+ C:/MinGW64/mingw64/x86_64-w64-mingw32/include/limits.h \
+ C:/MinGW64/mingw64/x86_64-w64-mingw32/include/sec_api/stdlib_s.h \
+ C:/MinGW64/mingw64/x86_64-w64-mingw32/include/malloc.h \
+ C:/MinGW64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/mm_malloc.h \
+ C:/MinGW64/mingw64/x86_64-w64-mingw32/include/errno.h \
+ C:/MinGW64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/c++/bits/std_abs.h \
+ C:/MinGW64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/stddef.h \
+ C:/MinGW64/mingw64/x86_64-w64-mingw32/include/stddef.h \
+ C:/MinGW64/mingw64/x86_64-w64-mingw32/include/string.h \
+ C:/MinGW64/mingw64/x86_64-w64-mingw32/include/sec_api/string_s.h

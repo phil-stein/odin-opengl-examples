@@ -1,0 +1,22 @@
+# CMake generation dependency list for this directory.
+C:/Program Files/CMake/share/cmake-3.29/Modules/CMakeParseArguments.cmake
+C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/cmake/bgfx/3rdparty/dear-imgui.cmake
+C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/cmake/bgfx/3rdparty/fcpp.cmake
+C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/cmake/bgfx/3rdparty/glsl-optimizer.cmake
+C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/cmake/bgfx/3rdparty/glslang.cmake
+C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/cmake/bgfx/3rdparty/meshoptimizer.cmake
+C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/cmake/bgfx/3rdparty/spirv-cross.cmake
+C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/cmake/bgfx/3rdparty/spirv-opt.cmake
+C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/cmake/bgfx/3rdparty/webgpu.cmake
+C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/cmake/bgfx/CMakeLists.txt
+C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/cmake/bgfx/bgfx.cmake
+C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/cmake/bgfx/examples.cmake
+C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/cmake/bgfx/generated/shader.cpp.in
+C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/cmake/bgfx/generated/vertexlayout.cpp.in
+C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/cmake/bgfx/geometryc.cmake
+C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/cmake/bgfx/geometryv.cmake
+C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/cmake/bgfx/shaderc.cmake
+C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/cmake/bgfx/shared.cmake
+C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/cmake/bgfx/texturev.cmake
+C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/cmake/bgfx/util/ConfigureDebugging.cmake
+C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/cmake/bgfxToolUtils.cmake

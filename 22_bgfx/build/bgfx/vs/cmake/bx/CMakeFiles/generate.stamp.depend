@@ -1,0 +1,5 @@
+# CMake generation dependency list for this directory.
+C:/Program Files/CMake/share/cmake-3.29/Modules/GNUInstallDirs.cmake
+C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/cmake/bx/CMakeLists.txt
+C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/cmake/bx/bin2c.cmake
+C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/cmake/bx/bx.cmake

@@ -7,10 +7,9 @@ import "vendor:glfw"
 import gl "vendor:OpenGL"
 
 
-
 // intis glfw & glad, also creates the window
 // returns: <stddef.h> return_code
-window_create :: proc( width, height: int, title: cstring, type: WINDOW_TYPE, vsync: bool ) -> bool
+window_create :: proc( width, height: int, title: cstring, type: Window_Type, vsync: bool ) -> bool
 {
 	// enable error logging for glfw
   glfw.SetErrorCallback( cast(glfw.ErrorProc)error_callback )
@@ -31,8 +30,8 @@ window_create :: proc( width, height: int, title: cstring, type: WINDOW_TYPE, vs
 // 	glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 // #endif
 
-  monitor   := glfw.GetPrimaryMonitor()
-  mode      := glfw.GetVideoMode( monitor )
+  data.monitor   = glfw.GetPrimaryMonitor()
+  mode      := glfw.GetVideoMode( data.monitor )
   data.monitor_width  = int(mode.width)
   data.monitor_height = int(mode.height)
  
@@ -42,9 +41,9 @@ window_create :: proc( width, height: int, title: cstring, type: WINDOW_TYPE, vs
   glfw.WindowHint_int( glfw.REFRESH_RATE, mode.refresh_rate )
 
   // open a window and create its opengl context
-	if type == WINDOW_TYPE.FULLSCREEN
+	if type == Window_Type.FULLSCREEN
   {
-    data.window = glfw.CreateWindow( mode.width, mode.height, title, monitor, nil )
+    data.window = glfw.CreateWindow( mode.width, mode.height, title, data.monitor, nil )
     data.window_width  = int(mode.width)
     data.window_height = int(mode.height)
   }
@@ -62,12 +61,11 @@ window_create :: proc( width, height: int, title: cstring, type: WINDOW_TYPE, vs
 		return false
 	}
 
-  data.window_title = string(title)
-
 	// make the window's context current
 	glfw.MakeContextCurrent( data.window )
 
   glfw.SwapInterval( vsync ? 1 : 0 )  // disable vsync
+  data.vsync_enabled = vsync
 
   // gl.load_up_to( 3, 3, glfw.gl_set_proc_address )
   gl.load_up_to( 4, 6, glfw.gl_set_proc_address )
@@ -77,15 +75,16 @@ window_create :: proc( width, height: int, title: cstring, type: WINDOW_TYPE, vs
 	gl.Viewport( 0, 0, w, h )
 
 	// maximize window
-	if ( type == WINDOW_TYPE.MAXIMIZED )
+	if ( type == Window_Type.MAXIMIZED )
 	{
 		glfw.MaximizeWindow( data.window )
 	}
+  data.window_type = type
 
 	// set the resize callback
 	glfw.SetFramebufferSizeCallback( data.window, cast(glfw.FramebufferSizeProc)resize_callback )
   // @NOTE: causes inability to restore maximized after fullscreen, also framebuffers crash when minimizing to system tray
-  // glfwSetWindowMaximizeCallback(core_data->window,  (GLFWwindowmaximizefun)maximize_callback); 
+  glfw.SetWindowMaximizeCallback( data.window,  cast(glfw.WindowMaximizeProc)maximize_callback); 
 
 	glfw.SetWindowAttrib( data.window, glfw.FOCUS_ON_SHOW, 1 )  // 1: true
 	// glfwSetWindowAttrib(window, GLFW_AUTO_ICONIFY, true);
@@ -103,7 +102,7 @@ window_create :: proc( width, height: int, title: cstring, type: WINDOW_TYPE, vs
 }
 
 // glfw error callback func
-@(private)
+@(private="file")
 error_callback :: proc( error: c.int, description: cstring )
 {
 	fmt.printf( "GLFW-Error: %s\n", description );
@@ -112,16 +111,21 @@ error_callback :: proc( error: c.int, description: cstring )
 // window resize callback
 // resizes the "glViewport" according to the resized window
 // window is type GLFWwindow*
-@(private)
+@(private="file")
 resize_callback :: proc( window: glfw.WindowHandle, width, height: c.int )
 {
 	gl.Viewport( 0, 0, width, height );
-
+  // camera_set_pers_mat( f32(width), f32(height) )
   data.window_width  = int(width)
   data.window_height = int(height)
 }
+@(private="file")
+maximize_callback :: proc(window: glfw.WindowHandle, maximized: c.int )
+{
+  data.window_type = maximized == 1 ? Window_Type.MAXIMIZED : Window_Type.MINIMIZED 
+}
 
-GL_DEBUG_ENUM :: enum
+Gl_Debug_Enum :: enum
 {
   OUTPUT_SYNCHRONOUS           = gl.DEBUG_OUTPUT_SYNCHRONOUS,
   NEXT_LOGGED_MESSAGE_LENGTH   = gl.DEBUG_NEXT_LOGGED_MESSAGE_LENGTH,
@@ -149,8 +153,8 @@ GL_DEBUG_ENUM :: enum
   TYPE_POP_GROUP               = gl.DEBUG_TYPE_POP_GROUP,
   SEVERITY_NOTIFICATION        = gl.DEBUG_SEVERITY_NOTIFICATION,
   
-   MAX_DEBUG_GROUP_STACK_DEPTH = gl.MAX_DEBUG_GROUP_STACK_DEPTH,
-   GROUP_STACK_DEPTH           = gl.DEBUG_GROUP_STACK_DEPTH,
+  MAX_DEBUG_GROUP_STACK_DEPTH = gl.MAX_DEBUG_GROUP_STACK_DEPTH,
+  GROUP_STACK_DEPTH           = gl.DEBUG_GROUP_STACK_DEPTH,
 
 
 }
@@ -169,15 +173,16 @@ opengl_debug_callback :: proc( source, type, id, severity: u32,
   // fmt.eprintf( "GL CALLBACK: %s type = 0x%x, severity = 0x%x, message = %s\n",
   //          ( type == gl.DEBUG_TYPE_ERROR ? "** GL ERROR **" : "" ), type, severity, message );
 
-  // skip these messages: 
-  // [GL ERROR]: type: TYPE_OTHER, severity: SEVERITY_NOTIFICATION
-  //  -> message: Buffer detailed info: Buffer object 2 (bound to GL_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) 
-  // will use VIDEO memory as the source for buffer object operations.
-  if GL_DEBUG_ENUM(type) == GL_DEBUG_ENUM.TYPE_OTHER && GL_DEBUG_ENUM(severity) == GL_DEBUG_ENUM.SEVERITY_NOTIFICATION
-  { return }
+  // @TODO: fix all these messages in the future
+  if Gl_Debug_Enum(severity) == .SEVERITY_NOTIFICATION ||
+     Gl_Debug_Enum(severity) == .SEVERITY_LOW          ||
+     Gl_Debug_Enum(severity) == .SEVERITY_MEDIUM       
+  {
+    return
+  }
 
   fmt.eprintf( "[GL ERROR]: type: %s, severity: %s\n -> message: %s\n",
-               GL_DEBUG_ENUM(type), GL_DEBUG_ENUM(severity), message );
+               Gl_Debug_Enum(type), Gl_Debug_Enum(severity), message );
   // fmt.println( oc ) // is nil
   // fmt.println( " -> ", loc.file_path, ", proc: ", loc.procedure, ", line: ", loc.line )
 }
@@ -189,14 +194,40 @@ window_should_close :: proc() -> bool
 
 window_set_title :: proc( title: cstring )
 {
-	glfw.SetWindowTitle(data.window, title);
-  data.window_title = string(title)
+	glfw.SetWindowTitle(data.window, title)
+	// window_title = (char*)title;
+  // strcpy(window_title, title);
 }
 
-// void maximize_callback(void* window, int maximized)
-// {
-//   TRACE();
-//
-//   (void)window;
-//   win_type = maximized ? WINDOW_MAX : WINDOW_MIN; // : win_type;
-// }
+window_set_vsync :: proc( vsync: bool )
+{
+  glfw.SwapInterval( vsync ? 1 : 0 )  // disable vsync
+  data.vsync_enabled = vsync
+}
+window_get_size :: #force_inline proc() -> ( width, height: int )
+{
+	w, h := glfw.GetWindowSize( data.window )
+  return int(w), int(h)
+}
+window_set_type :: proc( type: Window_Type )
+{
+	// maximize window
+	switch type
+  {
+    case Window_Type.MINIMIZED:
+	  {
+	  	glfw.RestoreWindow( data.window )
+	  }
+    case Window_Type.MAXIMIZED:
+	  {
+	  	glfw.MaximizeWindow( data.window )
+	  }
+    case Window_Type.FULLSCREEN:
+    {
+      mode : ^glfw.VidMode = glfw.GetVideoMode( data.monitor )
+      glfw.SetWindowMonitor( data.window, data.monitor, 0, 0, mode.width, mode.height, mode.refresh_rate )
+    }
+  }
+  data.window_type = type
+}
+

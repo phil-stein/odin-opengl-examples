@@ -3,6 +3,7 @@ package core
 import        "base:runtime"
 import        "core:os"
 import        "core:fmt"
+import        "core:log"
 import        "core:math"
 import linalg "core:math/linalg/glsl"
 import gl     "vendor:OpenGL"
@@ -53,7 +54,7 @@ text_make_atlas :: proc( font_name: string, glyph_size: i32 ) -> ( handle: u32, 
   h    = f32(glyph_size * 2) 
   w    = f32(glyph_size * 2)
 
-  rect_verts : [6 * 4] f32 
+  rect_verts : [6 * 4]f32 
   rect_verts = { // rect coords : vec2, texture coords : vec2
     0, h,    0, 0,
     0, 0,    0, 1,
@@ -76,6 +77,7 @@ text_make_atlas :: proc( font_name: string, glyph_size: i32 ) -> ( handle: u32, 
   
   // Describe GPU buffer.
   gl.BufferData(gl.ARRAY_BUFFER, size_of(rect_verts), &rect_verts, gl.STATIC_DRAW)
+  log.debug( "size_of(rect_verts):", size_of(rect_verts), ", len(rect_verts):", len(rect_verts) )
 
   // Position and color attributes. Don't forget to enable!
   gl.VertexAttribPointer(0, 2, gl.FLOAT, gl.FALSE, 4 * size_of(f32), 0 * size_of(f32))
@@ -330,8 +332,6 @@ text_draw_glyph :: proc( pos: linalg.vec2, char: i32 )
   trans_mat_ptr : [^] f32 = &translation_mat[0]
 
   shader_use( data.text.shader )
-  gl.BindVertexArray( data.text.mesh.vao )
-  // defer gl.BindVertexArray(0)
   
   // Send matrices to the shader.
   shader_act_set_mat2_transpose( "projection",  proj_mat_ptr )
@@ -348,6 +348,8 @@ text_draw_glyph :: proc( pos: linalg.vec2, char: i32 )
 
   shader_act_bind_texture( "glyph_texture", data.text.atlas_tex_handle )
   
+  gl.BindVertexArray( data.text.mesh.vao )
+  // defer gl.BindVertexArray(0)
   gl.DrawArrays(gl.TRIANGLES, 0, 6)
 
   data.text.draw_calls += 1
@@ -398,97 +400,126 @@ text_draw_string :: proc( str: string, pos: linalg.vec2 ) -> ( str_len: i32 )
   return i32( len(str) )
 }
 
-text_bake_string :: proc( str: string, pos: linalg.vec2 ) -> ( text_mesh: mesh_t )
+text_bake_string :: proc( str: string, _pos: linalg.vec2 ) -> ( text_mesh: mesh_t )
 {
   mesh  : mesh_t
   verts : [dynamic]f32
+  pos   := _pos
   
+  // Calculate projection matrix.
+  render_rect_w , render_rect_h : f32
+  render_rect_w = f32(data.window_width) 
+  render_rect_h = f32(data.window_height)
+  
+  // proj_mat := mat2{
+  proj_mat := [4]f32{
+      1/render_rect_w, 0,
+      0, 1/render_rect_h,
+  }
 
-  _pos := pos
-  c_idx : i32 = 0 
-  for char in str
+  // translation_mat := mat4{
+  translation_mat := [16]f32 {
+      1, 0, 0, pos.x, 
+      0, 1, 0, pos.y, 
+      0, 0, 1, 0,
+      0, 0, 0, 1,
+  }
+
+  for char, i in str
   {
-    c_idx += 1
-
-    // Calculate projection matrix.
-    render_rect_w , render_rect_h : f32
-    render_rect_w = f32(data.window_width) 
-    render_rect_h = f32(data.window_height)
-    
-    proj_mat := [4] f32 {
-        1/render_rect_w, 0,
-        0, 1/render_rect_h,
-    }
-    
-    proj_mat_ptr : [^] f32 = &proj_mat[0]
-
     x_pos_offs :=  2 * ( glyph_info[char].x_offs / f32(data.window_width ) )
     y_pos_offs := -2 * ( glyph_info[char].y_offs / f32(data.window_height) )
 
-    translation_mat := [16] f32 {
-        1, 0, 0, pos.x + x_pos_offs, // radius * m.cos(theta),
-        0, 1, 0, pos.y + y_pos_offs, // radius * m.sin(theta),
-        0, 0, 1, 0,
-        0, 0, 0, 1,
-    }
-
-    trans_mat_ptr : [^] f32 = &translation_mat[0]
-
-    // defer gl.BindVertexArray(0)
-    
-    // // Send matrices to the shader.
-    // shader_act_set_mat2_transpose( "projection",  proj_mat_ptr )
-    // shader_act_set_mat4_transpose( "translation", trans_mat_ptr )
-    // // shader_act_set_i32( "tile_idx", char )
-    // shader_act_set_f32( "ratio",  f32(1) / f32(len(ATLAS_CHARS)) )
-    // y_offs := (f32(1) / f32(len(ATLAS_CHARS)) ) * f32(char)
-    // // y_offs += ( glyph_info[char].y_offs ) * (f32(1) / f32(len(ATLAS_CHARS)) )
-    // // shader_act_set_vec2_f( "offs",  glyph_info[char].x_offs, y_offs )
-    // shader_act_set_f32( "offs", y_offs )
-
+    x_pos    := pos.x + x_pos_offs
+    y_pos    := pos.y + y_pos_offs
+    rect_pos := vec2{ x_pos_offs, y_pos_offs } // vec2{ pos.x + x_pos_offs, pos.y + y_pos_offs }
 
     // @TODO: 
-    // h := f32(data.text.glyph_size * 2) 
-    // w := f32(data.text.glyph_size * 2)
-    // aPos := [2]f32{ w, h } * proj_mat
-    // gl_Position := [4]f32{ aPos.x, aPos.y, 0, 1 }
-    // gl_Position *= translation_mat
-    // fmt.println( "gl_Position: ", gl_Position )
-    // rect_verts : [6 * 4]f32 
-    // rect_verts = { // rect coords : vec2, texture coords : vec2
-    //   0, h,    0, 0,
-    //   0, 0,    0, 1,
-    //   w, 0,    1, 1,
-    //   0, h,    0, 0,
-    //   w, 0,    1, 1,
-    //   w, h,    1, 0,
-    // }
+    h := f32(data.text.glyph_size * 2) // f32(1.0)  
+    w := f32(data.text.glyph_size * 2) // f32(1.0) 
+    // h := f32(1.0)  
+    // w := f32(1.0) 
+    log.debug( "h:", h, "w:", w )
 
-  gl.GenVertexArrays(1, &data.text.mesh.vao)
-  gl.BindVertexArray(data.text.mesh.vao)
+    // rect_pos  := util_mat4_mul_v( translation_mat, vec4{ x_pos, y_pos, 0, 1 } )
+    
+    // move to right spot in atlas
+    ratio  :=  f32(1) / f32(len(ATLAS_CHARS))
+    y_offs := (f32(1) / f32(len(ATLAS_CHARS)) ) * f32(char)
+     
+    log.debug( "rect_pos: ", rect_pos )
+    rect_verts : [6 * 4]f32 
+    rect_verts = { // rect coords : vec2, texture coords : vec2
+      // pos.x   pos.y             uv.x        uv.y
+      // 0,              h + rect_pos.y,   0,          0,
+      // 0,              0,                0,          1 * ratio + y_offs,
+      // w + rect_pos.x, 0,                1 + y_offs, 1 * ratio + y_offs,
+      // 0,              h + rect_pos.y,   0,          0,
+      // w + rect_pos.x, 0,                1 + y_offs, 1 * ratio + y_offs,
+      // w + rect_pos.x, h + rect_pos.y,   1 + y_offs, 0,
 
+      0, h,   0, 0,
+      0, 0,   0, 1,
+      w, 0,   1, 1,
+      0, h,   0, 0,
+      w, 0,   1, 1,
+      w, h,   1, 0,
+    }
+
+    append_elems( &verts, ..rect_verts[:] )
+
+    pos.x += ( glyph_info[i].advance / f32(data.window_width) ) * 2 
+  }
+
+  // gl.GenVertexArrays( 1, &mesh.vao )
+  // gl.GenBuffers( 1, &mesh.vbo )
+  // gl.BindVertexArray( mesh.vao)
+  // defer gl.BindVertexArray( 0 )
+  // gl.BindBuffer( gl.ARRAY_BUFFER, mesh.vbo )
+	// gl.BufferData( gl.ARRAY_BUFFER, size_of(verts), &verts, gl.STATIC_DRAW); // quad_verts is 24 long
+	// gl.EnableVertexAttribArray(0);
+	// gl.VertexAttribPointer( 0, 2, gl.FLOAT, gl.FALSE, 4 * size_of(f32), 0 )
+	// gl.EnableVertexAttribArray( 1 )
+	// gl.VertexAttribPointer( 1, 2, gl.FLOAT, gl.FALSE, 4 * size_of(f32), 2 * size_of(f32) )
+
+  gl.GenVertexArrays(1, &mesh.vao)
+  gl.BindVertexArray(mesh.vao)
   vbo : u32 
   gl.GenBuffers(1, &vbo)
   gl.BindBuffer(gl.ARRAY_BUFFER, vbo)
+  // Describe GPU buffer.
+  gl.BufferData(gl.ARRAY_BUFFER, len(verts) * size_of(f32) /* size_of(verts) */, &verts, gl.STATIC_DRAW)
+  // Position and color attributes. Don't forget to enable!
+  gl.VertexAttribPointer(0, 2, gl.FLOAT, gl.FALSE, 4 * size_of(f32), 0 * size_of(f32))
+  gl.VertexAttribPointer(1, 2, gl.FLOAT, gl.FALSE, 4 * size_of(f32), 2 * size_of(f32))
+  gl.EnableVertexAttribArray(0)
+  gl.EnableVertexAttribArray(1)
 
+  proj_mat_ptr  : [^]f32 = &proj_mat[0]
+  trans_mat_ptr : [^]f32 = &translation_mat[0]
 
-    _pos.x += ( glyph_info[c_idx].advance / f32(data.window_width) ) * 2 
-  }
-  
   shader_use( data.text.baked_shader )
   // gl.BindVertexArray( data.text.mesh.vao )
-
+  
+  // shader_act_set_vec2_f( "pos", 0, 0 )
+  // shader_act_set_vec2_f( "scl", 1, 1 )
+  // shader_act_set_mat2_transpose( "projection",  ([^]f32)(&proj_mat[0]) )
+  // shader_act_set_mat4_transpose( "translation", ([^]f32)(&translation_mat[0]) )
+  shader_act_set_mat2_transpose( "projection",  proj_mat_ptr )
+  shader_act_set_mat4_transpose( "translation", trans_mat_ptr )
+  
   shader_act_set_vec3_f( "color", 1, 1, 1 )
-  // fmt.println( "ratio: ", f32(1) / f32(len(ATLAS_CHARS)) )
-  shader_act_set_bool( "solid", data.text.draw_solid )
-
+  shader_act_set_bool( "solid", true ) // data.text.draw_solid )
   shader_act_bind_texture( "glyph_texture", data.text.atlas_tex_handle )
   
-  gl.DrawArrays(gl.TRIANGLES, 0, 6)
+  gl.DrawArrays( gl.TRIANGLES, 0, i32(len(verts) / 4) )
   data.text.draw_calls += 1
 
-  return mesh 
+  log.debug( "len(verts):", len(verts), ", len(verts) / 4:", len(verts) / 4, ", size_of(verts):", size_of(verts), ", len(verts) * size_of(f32):", len(verts) * size_of(f32) )
 
+  delete( verts )
+
+  return mesh 
 }
 
 // text_draw_glyph :: proc() 

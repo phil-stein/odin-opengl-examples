@@ -1,0 +1,3 @@
+"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\example-44-sss.dir/objects.a
+C:\MinGW64\mingw64\bin\ar.exe qc CMakeFiles\example-44-sss.dir/objects.a @CMakeFiles\example-44-sss.dir\objects1.rsp
+C:\MinGW64\mingw64\bin\c++.exe -mwindows -Wl,--whole-archive CMakeFiles\example-44-sss.dir/objects.a -Wl,--no-whole-archive -o C:\Workspace\C\fisch_bgfx\_bin\example-44-sss.exe -Wl,--out-implib,libexample-44-sss.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\example-44-sss.dir\linkLibs.rsp

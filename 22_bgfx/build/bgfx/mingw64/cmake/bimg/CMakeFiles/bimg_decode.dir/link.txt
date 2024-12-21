@@ -1,0 +1,2 @@
+C:\MinGW64\mingw64\bin\ar.exe qc libbimg_decode.a CMakeFiles/bimg_decode.dir/C_/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bimg/3rdparty/tinyexr/deps/miniz/miniz.c.obj CMakeFiles/bimg_decode.dir/C_/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bimg/src/image_decode.cpp.obj
+C:\MinGW64\mingw64\bin\ranlib.exe libbimg_decode.a

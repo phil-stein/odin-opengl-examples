@@ -1,0 +1,374 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{F9EDBA13-A017-3D55-8D44-78F2DD5684EF}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>shaderc</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Workspace\C\fisch_bgfx\_bin\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">shaderc.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">shaderc</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Workspace\C\fisch_bgfx\_bin\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">shaderc.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">shaderc</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Workspace\C\fisch_bgfx\_bin\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">shaderc.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">shaderc</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Workspace\C\fisch_bgfx\_bin\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">shaderc.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">shaderc</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\3rdparty;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\include\compat\msvc;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\fcpp;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\glslang;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\glslang\glslang\Public;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\glsl-optimizer\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\glsl-optimizer\src\glsl;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\spirv-tools\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\spirv-cross;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bimg\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\webgpu\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /Zc:__cplusplus</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;BX_CONFIG_DEBUG=1;__STDC_LIMIT_MACROS;__STDC_FORMAT_MACROS;__STDC_CONSTANT_MACROS;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;BX_CONFIG_DEBUG=1;__STDC_LIMIT_MACROS;__STDC_FORMAT_MACROS;__STDC_CONSTANT_MACROS;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\3rdparty;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\include\compat\msvc;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\fcpp;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\glslang;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\glslang\glslang\Public;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\glsl-optimizer\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\glsl-optimizer\src\glsl;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\spirv-tools\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\spirv-cross;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bimg\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\webgpu\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\3rdparty;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\include\compat\msvc;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\fcpp;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\glslang;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\glslang\glslang\Public;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\glsl-optimizer\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\glsl-optimizer\src\glsl;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\spirv-tools\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\spirv-cross;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bimg\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\webgpu\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\bx\Debug\bx.lib;Debug\fcpp.lib;Debug\glslang.lib;Debug\glsl-optimizer.lib;Debug\spirv-opt.lib;Debug\spirv-cross.lib;..\bx\Debug\bx.lib;..\bimg\Debug\bimg.lib;Debug\fcpp.lib;Debug\glslang.lib;Debug\glsl-optimizer.lib;Debug\spirv-opt.lib;Debug\spirv-cross.lib;..\bx\Debug\bx.lib;psapi.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Workspace/C/fisch_bgfx/_build/bgfx/vs/cmake/bgfx/Debug/shaderc.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Workspace/C/fisch_bgfx/_bin/Debug/shaderc.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\3rdparty;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\include\compat\msvc;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\fcpp;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\glslang;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\glslang\glslang\Public;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\glsl-optimizer\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\glsl-optimizer\src\glsl;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\spirv-tools\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\spirv-cross;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bimg\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\webgpu\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /Zc:__cplusplus</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;BX_CONFIG_DEBUG=0;__STDC_LIMIT_MACROS;__STDC_FORMAT_MACROS;__STDC_CONSTANT_MACROS;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;BX_CONFIG_DEBUG=0;__STDC_LIMIT_MACROS;__STDC_FORMAT_MACROS;__STDC_CONSTANT_MACROS;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\3rdparty;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\include\compat\msvc;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\fcpp;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\glslang;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\glslang\glslang\Public;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\glsl-optimizer\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\glsl-optimizer\src\glsl;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\spirv-tools\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\spirv-cross;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bimg\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\webgpu\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\3rdparty;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\include\compat\msvc;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\fcpp;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\glslang;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\glslang\glslang\Public;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\glsl-optimizer\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\glsl-optimizer\src\glsl;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\spirv-tools\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\spirv-cross;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bimg\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\webgpu\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\bx\Release\bx.lib;Release\fcpp.lib;Release\glslang.lib;Release\glsl-optimizer.lib;Release\spirv-opt.lib;Release\spirv-cross.lib;..\bx\Release\bx.lib;..\bimg\Release\bimg.lib;Release\fcpp.lib;Release\glslang.lib;Release\glsl-optimizer.lib;Release\spirv-opt.lib;Release\spirv-cross.lib;..\bx\Release\bx.lib;psapi.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Workspace/C/fisch_bgfx/_build/bgfx/vs/cmake/bgfx/Release/shaderc.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Workspace/C/fisch_bgfx/_bin/Release/shaderc.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\3rdparty;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\include\compat\msvc;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\fcpp;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\glslang;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\glslang\glslang\Public;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\glsl-optimizer\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\glsl-optimizer\src\glsl;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\spirv-tools\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\spirv-cross;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bimg\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\webgpu\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /Zc:__cplusplus</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;BX_CONFIG_DEBUG=0;__STDC_LIMIT_MACROS;__STDC_FORMAT_MACROS;__STDC_CONSTANT_MACROS;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;BX_CONFIG_DEBUG=0;__STDC_LIMIT_MACROS;__STDC_FORMAT_MACROS;__STDC_CONSTANT_MACROS;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\3rdparty;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\include\compat\msvc;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\fcpp;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\glslang;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\glslang\glslang\Public;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\glsl-optimizer\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\glsl-optimizer\src\glsl;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\spirv-tools\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\spirv-cross;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bimg\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\webgpu\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\3rdparty;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\include\compat\msvc;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\fcpp;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\glslang;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\glslang\glslang\Public;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\glsl-optimizer\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\glsl-optimizer\src\glsl;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\spirv-tools\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\spirv-cross;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bimg\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\webgpu\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\bx\MinSizeRel\bx.lib;MinSizeRel\fcpp.lib;MinSizeRel\glslang.lib;MinSizeRel\glsl-optimizer.lib;MinSizeRel\spirv-opt.lib;MinSizeRel\spirv-cross.lib;..\bx\MinSizeRel\bx.lib;..\bimg\MinSizeRel\bimg.lib;MinSizeRel\fcpp.lib;MinSizeRel\glslang.lib;MinSizeRel\glsl-optimizer.lib;MinSizeRel\spirv-opt.lib;MinSizeRel\spirv-cross.lib;..\bx\MinSizeRel\bx.lib;psapi.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Workspace/C/fisch_bgfx/_build/bgfx/vs/cmake/bgfx/MinSizeRel/shaderc.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Workspace/C/fisch_bgfx/_bin/MinSizeRel/shaderc.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\3rdparty;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\include\compat\msvc;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\fcpp;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\glslang;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\glslang\glslang\Public;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\glsl-optimizer\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\glsl-optimizer\src\glsl;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\spirv-tools\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\spirv-cross;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bimg\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\webgpu\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /Zc:__cplusplus</AdditionalOptions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;BX_CONFIG_DEBUG=0;__STDC_LIMIT_MACROS;__STDC_FORMAT_MACROS;__STDC_CONSTANT_MACROS;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;BX_CONFIG_DEBUG=0;__STDC_LIMIT_MACROS;__STDC_FORMAT_MACROS;__STDC_CONSTANT_MACROS;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\3rdparty;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\include\compat\msvc;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\fcpp;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\glslang;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\glslang\glslang\Public;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\glsl-optimizer\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\glsl-optimizer\src\glsl;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\spirv-tools\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\spirv-cross;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bimg\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\webgpu\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\3rdparty;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bx\include\compat\msvc;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\fcpp;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\glslang;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\glslang\glslang\Public;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\glsl-optimizer\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\glsl-optimizer\src\glsl;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\spirv-tools\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\spirv-cross;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bimg\include;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\webgpu\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\bx\RelWithDebInfo\bx.lib;RelWithDebInfo\fcpp.lib;RelWithDebInfo\glslang.lib;RelWithDebInfo\glsl-optimizer.lib;RelWithDebInfo\spirv-opt.lib;RelWithDebInfo\spirv-cross.lib;..\bx\RelWithDebInfo\bx.lib;..\bimg\RelWithDebInfo\bimg.lib;RelWithDebInfo\fcpp.lib;RelWithDebInfo\glslang.lib;RelWithDebInfo\glsl-optimizer.lib;RelWithDebInfo\spirv-opt.lib;RelWithDebInfo\spirv-cross.lib;..\bx\RelWithDebInfo\bx.lib;psapi.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Workspace/C/fisch_bgfx/_build/bgfx/vs/cmake/bgfx/RelWithDebInfo/shaderc.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Workspace/C/fisch_bgfx/_bin/RelWithDebInfo/shaderc.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/cmake/bgfx/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Workspace/C/fisch_bgfx/_build/make -BC:/Workspace/C/fisch_bgfx/_build/vs22 --check-stamp-file C:/Workspace/C/fisch_bgfx/_build/bgfx/vs/cmake/bgfx/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files\CMake\share\cmake-3.29\Modules\CMakeParseArguments.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\dear-imgui.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\fcpp.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\glsl-optimizer.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\glslang.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\meshoptimizer.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\spirv-cross.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\spirv-opt.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\webgpu.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\bgfx.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\examples.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\generated\shader.cpp.in;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\generated\vertexlayout.cpp.in;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\geometryc.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\geometryv.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\shaderc.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\shared.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\texturev.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\util\ConfigureDebugging.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfxToolUtils.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/cmake/bgfx/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Workspace/C/fisch_bgfx/_build/make -BC:/Workspace/C/fisch_bgfx/_build/vs22 --check-stamp-file C:/Workspace/C/fisch_bgfx/_build/bgfx/vs/cmake/bgfx/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\CMake\share\cmake-3.29\Modules\CMakeParseArguments.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\dear-imgui.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\fcpp.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\glsl-optimizer.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\glslang.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\meshoptimizer.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\spirv-cross.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\spirv-opt.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\webgpu.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\bgfx.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\examples.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\generated\shader.cpp.in;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\generated\vertexlayout.cpp.in;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\geometryc.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\geometryv.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\shaderc.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\shared.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\texturev.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\util\ConfigureDebugging.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfxToolUtils.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/cmake/bgfx/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Workspace/C/fisch_bgfx/_build/make -BC:/Workspace/C/fisch_bgfx/_build/vs22 --check-stamp-file C:/Workspace/C/fisch_bgfx/_build/bgfx/vs/cmake/bgfx/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Program Files\CMake\share\cmake-3.29\Modules\CMakeParseArguments.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\dear-imgui.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\fcpp.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\glsl-optimizer.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\glslang.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\meshoptimizer.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\spirv-cross.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\spirv-opt.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\webgpu.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\bgfx.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\examples.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\generated\shader.cpp.in;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\generated\vertexlayout.cpp.in;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\geometryc.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\geometryv.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\shaderc.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\shared.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\texturev.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\util\ConfigureDebugging.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfxToolUtils.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/cmake/bgfx/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Workspace/C/fisch_bgfx/_build/make -BC:/Workspace/C/fisch_bgfx/_build/vs22 --check-stamp-file C:/Workspace/C/fisch_bgfx/_build/bgfx/vs/cmake/bgfx/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Program Files\CMake\share\cmake-3.29\Modules\CMakeParseArguments.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\dear-imgui.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\fcpp.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\glsl-optimizer.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\glslang.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\meshoptimizer.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\spirv-cross.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\spirv-opt.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\webgpu.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\bgfx.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\examples.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\generated\shader.cpp.in;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\generated\vertexlayout.cpp.in;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\geometryc.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\geometryv.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\shaderc.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\shared.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\texturev.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\util\ConfigureDebugging.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfxToolUtils.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\src\shader.cpp" />
+    <ClInclude Include="C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\src\shader.h" />
+    <ClCompile Include="C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\src\shader_dxbc.cpp" />
+    <ClInclude Include="C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\src\shader_dxbc.h" />
+    <ClCompile Include="C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\src\shader_spirv.cpp" />
+    <ClInclude Include="C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\src\shader_spirv.h" />
+    <ClCompile Include="C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\tools\shaderc\shaderc.cpp" />
+    <ClInclude Include="C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\tools\shaderc\shaderc.h" />
+    <ClCompile Include="C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\tools\shaderc\shaderc_glsl.cpp" />
+    <ClCompile Include="C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\tools\shaderc\shaderc_hlsl.cpp" />
+    <ClCompile Include="C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\tools\shaderc\shaderc_metal.cpp" />
+    <ClCompile Include="C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\tools\shaderc\shaderc_pssl.cpp" />
+    <ClCompile Include="C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\tools\shaderc\shaderc_spirv.cpp" />
+    <ClCompile Include="C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\generated\vertexlayout.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Workspace\C\fisch_bgfx\_build\vs22\ZERO_CHECK.vcxproj">
+      <Project>{8192A4C1-2856-3F5B-B1FA-309112B0BDC1}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bimg\bimg.vcxproj">
+      <Project>{2886E597-BBC1-3E2A-B88A-F0CE665E94E3}</Project>
+      <Name>bimg</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bx\bx.vcxproj">
+      <Project>{7810ADBF-6E31-3CE0-B6D7-E3D631F90D17}</Project>
+      <Name>bx</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\fcpp.vcxproj">
+      <Project>{784FCC19-AA34-3EF4-A097-B93A2DBC9B25}</Project>
+      <Name>fcpp</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\glsl-optimizer.vcxproj">
+      <Project>{FA125617-FBB2-3E24-B821-F61EF2FD1AF3}</Project>
+      <Name>glsl-optimizer</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\glslang.vcxproj">
+      <Project>{81CBD200-E7C2-36FC-80B0-9B717C79A460}</Project>
+      <Name>glslang</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\spirv-cross.vcxproj">
+      <Project>{B8FF33A5-A194-3286-8B0A-15A1D769A9D3}</Project>
+      <Name>spirv-cross</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\spirv-opt.vcxproj">
+      <Project>{B850B7A9-5163-3EA1-953D-2D0F988383CC}</Project>
+      <Name>spirv-opt</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

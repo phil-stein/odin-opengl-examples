@@ -1,0 +1,36 @@
+C:/Workspace/C/fisch_bgfx/_build/bgfx/mingw64/cmake/bgfx/CMakeFiles/glsl-optimizer.dir/C_/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/3rdparty/glsl-optimizer/src/util/ralloc.c.obj: \
+ C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\glsl-optimizer\src\util\ralloc.c \
+ C:/MinGW64/mingw64/x86_64-w64-mingw32/include/assert.h \
+ C:/MinGW64/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
+ C:/MinGW64/mingw64/x86_64-w64-mingw32/include/corecrt.h \
+ C:/MinGW64/mingw64/x86_64-w64-mingw32/include/_mingw.h \
+ C:/MinGW64/mingw64/x86_64-w64-mingw32/include/_mingw_mac.h \
+ C:/MinGW64/mingw64/x86_64-w64-mingw32/include/_mingw_secapi.h \
+ C:/MinGW64/mingw64/x86_64-w64-mingw32/include/vadefs.h \
+ C:/MinGW64/mingw64/x86_64-w64-mingw32/include/sdks/_mingw_ddk.h \
+ C:/MinGW64/mingw64/x86_64-w64-mingw32/include/stdlib.h \
+ C:/MinGW64/mingw64/x86_64-w64-mingw32/include/corecrt_wstdlib.h \
+ C:/MinGW64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/limits.h \
+ C:/MinGW64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/syslimits.h \
+ C:/MinGW64/mingw64/x86_64-w64-mingw32/include/limits.h \
+ C:/MinGW64/mingw64/x86_64-w64-mingw32/include/sec_api/stdlib_s.h \
+ C:/MinGW64/mingw64/x86_64-w64-mingw32/include/malloc.h \
+ C:/MinGW64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/mm_malloc.h \
+ C:/MinGW64/mingw64/x86_64-w64-mingw32/include/errno.h \
+ C:/MinGW64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/stdarg.h \
+ C:/MinGW64/mingw64/x86_64-w64-mingw32/include/stdarg.h \
+ C:/MinGW64/mingw64/x86_64-w64-mingw32/include/_mingw_stdarg.h \
+ C:/MinGW64/mingw64/x86_64-w64-mingw32/include/stdio.h \
+ C:/MinGW64/mingw64/x86_64-w64-mingw32/include/corecrt_stdio_config.h \
+ C:/MinGW64/mingw64/x86_64-w64-mingw32/include/_mingw_off_t.h \
+ C:/MinGW64/mingw64/x86_64-w64-mingw32/include/swprintf.inl \
+ C:/MinGW64/mingw64/x86_64-w64-mingw32/include/sec_api/stdio_s.h \
+ C:/MinGW64/mingw64/x86_64-w64-mingw32/include/string.h \
+ C:/MinGW64/mingw64/x86_64-w64-mingw32/include/sec_api/string_s.h \
+ C:/MinGW64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/stdint.h \
+ C:/MinGW64/mingw64/x86_64-w64-mingw32/include/stdint.h \
+ C:/MinGW64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/stddef.h \
+ C:/MinGW64/mingw64/x86_64-w64-mingw32/include/stddef.h \
+ C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\glsl-optimizer\src\util\ralloc.h \
+ C:/MinGW64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/stdbool.h \
+ C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\glsl-optimizer\src\util\macros.h

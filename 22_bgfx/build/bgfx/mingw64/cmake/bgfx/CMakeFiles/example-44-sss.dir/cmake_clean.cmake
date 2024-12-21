@@ -1,0 +1,41 @@
+file(REMOVE_RECURSE
+  "C:/Workspace/C/fisch_bgfx/_bin/example-44-sss.exe"
+  "C:/Workspace/C/fisch_bgfx/_bin/example-44-sss.exe.manifest"
+  "C:/Workspace/C/fisch_bgfx/_bin/example-44-sss.pdb"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/dx11/fs_screen_space_shadows.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/dx11/fs_sss_deferred_combine.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/dx11/fs_sss_gbuffer.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/dx11/fs_sss_linear_depth.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/dx11/fs_sss_unlit.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/dx11/vs_sss_gbuffer.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/dx11/vs_sss_screenquad.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/essl/fs_screen_space_shadows.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/essl/fs_sss_deferred_combine.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/essl/fs_sss_gbuffer.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/essl/fs_sss_linear_depth.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/essl/fs_sss_unlit.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/essl/vs_sss_gbuffer.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/essl/vs_sss_screenquad.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/glsl/fs_screen_space_shadows.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/glsl/fs_sss_deferred_combine.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/glsl/fs_sss_gbuffer.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/glsl/fs_sss_linear_depth.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/glsl/fs_sss_unlit.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/glsl/vs_sss_gbuffer.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/glsl/vs_sss_screenquad.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/spirv/fs_screen_space_shadows.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/spirv/fs_sss_deferred_combine.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/spirv/fs_sss_gbuffer.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/spirv/fs_sss_linear_depth.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/spirv/fs_sss_unlit.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/spirv/vs_sss_gbuffer.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/spirv/vs_sss_screenquad.bin"
+  "CMakeFiles/example-44-sss.dir/C_/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/44-sss/screen_space_shadows.cpp.obj"
+  "CMakeFiles/example-44-sss.dir/C_/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/44-sss/screen_space_shadows.cpp.obj.d"
+  "libexample-44-sss.dll.a"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/example-44-sss.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

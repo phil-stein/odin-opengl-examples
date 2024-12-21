@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\meshoptimizer\src\allocator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\meshoptimizer\src\clusterizer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\meshoptimizer\src\indexcodec.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\meshoptimizer\src\indexgenerator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\meshoptimizer\src\overdrawanalyzer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\meshoptimizer\src\overdrawoptimizer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\meshoptimizer\src\quantization.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\meshoptimizer\src\simplifier.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\meshoptimizer\src\spatialorder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\meshoptimizer\src\stripifier.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\meshoptimizer\src\vcacheanalyzer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\meshoptimizer\src\vcacheoptimizer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\meshoptimizer\src\vertexcodec.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\meshoptimizer\src\vertexfilter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\meshoptimizer\src\vfetchanalyzer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\meshoptimizer\src\vfetchoptimizer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\tools\geometryc\geometryc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\generated\vertexlayout.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bgfx\3rdparty\meshoptimizer\src\meshoptimizer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{1150ACA7-E3E2-3DC4-8476-DAE7CB777DF6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{9FE13024-1E06-3560-90CC-995FCC58F6B9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

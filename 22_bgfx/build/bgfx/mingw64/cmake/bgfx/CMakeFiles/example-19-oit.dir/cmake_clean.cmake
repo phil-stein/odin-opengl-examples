@@ -1,0 +1,41 @@
+file(REMOVE_RECURSE
+  "C:/Workspace/C/fisch_bgfx/_bin/example-19-oit.exe"
+  "C:/Workspace/C/fisch_bgfx/_bin/example-19-oit.exe.manifest"
+  "C:/Workspace/C/fisch_bgfx/_bin/example-19-oit.pdb"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/dx11/fs_oit.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/dx11/fs_oit_wb.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/dx11/fs_oit_wb_blit.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/dx11/fs_oit_wb_separate.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/dx11/fs_oit_wb_separate_blit.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/dx11/vs_oit.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/dx11/vs_oit_blit.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/essl/fs_oit.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/essl/fs_oit_wb.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/essl/fs_oit_wb_blit.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/essl/fs_oit_wb_separate.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/essl/fs_oit_wb_separate_blit.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/essl/vs_oit.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/essl/vs_oit_blit.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/glsl/fs_oit.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/glsl/fs_oit_wb.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/glsl/fs_oit_wb_blit.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/glsl/fs_oit_wb_separate.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/glsl/fs_oit_wb_separate_blit.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/glsl/vs_oit.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/glsl/vs_oit_blit.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/spirv/fs_oit.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/spirv/fs_oit_wb.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/spirv/fs_oit_wb_blit.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/spirv/fs_oit_wb_separate.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/spirv/fs_oit_wb_separate_blit.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/spirv/vs_oit.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/spirv/vs_oit_blit.bin"
+  "CMakeFiles/example-19-oit.dir/C_/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/19-oit/oit.cpp.obj"
+  "CMakeFiles/example-19-oit.dir/C_/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/19-oit/oit.cpp.obj.d"
+  "libexample-19-oit.dll.a"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/example-19-oit.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

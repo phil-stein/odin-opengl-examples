@@ -18,39 +18,241 @@ import        "vendor:glfw"
 import gl     "vendor:OpenGL"
 import        "core:time"
 import        "core:fmt"
+import        "core:log"
 import        "core:os"
 import        "core:math"
 import linalg "core:math/linalg/glsl"
 import        "core:image"
 import        "core:image/png"
-import        "core:log"
-import        "core:strings"
+import str    "core:strings"
 import        "core:mem/virtual"
 import        "base:runtime"
+import        "core:encoding/ansi"
 
 // Global variables.
 // global_vao       : u32 
 watch            : time.Stopwatch
 
 
+@(private="file")
+Default_Console_Logger_Opts :: log.Options {
+	.Level,
+	.Terminal_Color,
+	.Short_File_Path,
+	.Line,
+	.Procedure,
+} 
+@(private="file")
+create_console_logger :: proc(lowest := log.Level.Debug, opt := Default_Console_Logger_Opts, ident := "") -> log.Logger 
+{
+	data := new(log.File_Console_Logger_Data)
+	data.file_handle = os.INVALID_HANDLE
+	data.ident = ident
+	return log.Logger{file_console_logger_proc, data, lowest, opt}
+}
+
+@(private="file")
+destroy_console_logger :: proc(log: log.Logger) 
+{
+	free(log.data)
+}
+
+level_headers := [?]string{
+	 0..<10 = "[DEBUG] ",
+	10..<20 = "[INFO ] ",
+	20..<30 = "[WARN ] ",
+	30..<40 = "[ERROR] ",
+	40..<50 = "[FATAL] ",
+}
+@(private="file")
+file_console_logger_proc :: proc(logger_data: rawptr, level: log.Level, text: string, options: log.Options, location := #caller_location) {
+	data := cast(^log.File_Console_Logger_Data)logger_data
+	h: os.Handle = os.stdout if level <= log.Level.Error else os.stderr
+	if data.file_handle != os.INVALID_HANDLE 
+  {
+		h = data.file_handle
+	}
+	backing: [1024]byte //NOTE(Hoej): 1024 might be too much for a header backing, unless somebody has really long paths.
+	buf := str.builder_from_bytes(backing[:])
+
+
+	do_level_header( options, &buf, level )
+	do_location_header( options, &buf, location )
+  do_progress_header( options, &buf )
+	
+  fmt.sbprint(&buf, "| ")
+
+	// when time.IS_SUPPORTED {
+	// 	do_time_header(options, &buf, time.now())
+	// }
+
+
+	if .Thread_Id in options {
+		// NOTE(Oskar): not using context.thread_id here since that could be
+		// incorrect when replacing context for a thread.
+		fmt.sbprintf(&buf, "[{}] ", os.current_thread_id())
+	}
+
+	if data.ident != "" {
+		fmt.sbprintf(&buf, "[%s] ", data.ident)
+	}
+	//TODO(Hoej): When we have better atomics and such, make this thread-safe
+	fmt.fprintf(h, "%s%s\n", str.to_string(buf), text)
+
+}
+
+@(private="file")
+do_level_header :: proc(opts: log.Options, str: ^str.Builder, level: log.Level) 
+{
+	RESET     :: ansi.CSI + ansi.RESET           + ansi.SGR
+	RED       :: ansi.CSI + ansi.FG_RED          + ansi.SGR
+	YELLOW    :: ansi.CSI + ansi.FG_YELLOW       + ansi.SGR
+	DARK_GREY :: ansi.CSI + ansi.FG_BRIGHT_BLACK + ansi.SGR
+	CYAN      :: ansi.CSI + ansi.FG_CYAN         + ansi.SGR
+
+	col := RESET
+	switch level 
+  {
+	  case log.Level.Debug:         col = DARK_GREY
+	  case log.Level.Info:          col = CYAN // RESET
+	  case log.Level.Warning:       col = YELLOW
+	  case log.Level.Error, .Fatal: col = RED
+	}
+
+	if log.Options.Level in opts 
+  {
+		if log.Options.Terminal_Color in opts 
+    {
+			fmt.sbprint(str, col)
+		}
+		fmt.sbprint(str, level_headers[level])
+		if log.Options.Terminal_Color in opts 
+    {
+			fmt.sbprint(str, RESET)
+		}
+	}
+}
+
+@(private="file")
+do_time_header :: proc(opts: log.Options, buf: ^str.Builder, t: time.Time) {
+	when time.IS_SUPPORTED {
+		if log.Full_Timestamp_Opts & opts != nil {
+			fmt.sbprint(buf, "[")
+			y, m, d := time.date(t)
+			h, min, s := time.clock(t)
+			if .Date in opts {
+				fmt.sbprintf(buf, "%d-%02d-%02d", y, m, d)
+				if .Time in opts {
+					fmt.sbprint(buf, " ")
+				}
+			}
+			if .Time in opts { fmt.sbprintf(buf, "%02d:%02d:%02d", h, min, s) }
+			fmt.sbprint(buf, "] ")
+		}
+	}
+}
+@(private="file")
+log_progress    := [?]rune{ '|', '/', '-', '\\' } 
+@(private="file")
+log_process_idx : int
+@(private="file")
+do_progress_header :: proc(opts: log.Options, buf: ^str.Builder ) 
+{
+	RESET     :: ansi.CSI + ansi.RESET           + ansi.SGR
+	DARK_GREY :: ansi.CSI + ansi.FG_BRIGHT_BLACK + ansi.SGR
+
+	if log.Options.Terminal_Color in opts 
+  {
+		fmt.sbprint(buf, DARK_GREY)
+	}
+
+	fmt.sbprintf(buf, "[%v]", log_progress[log_process_idx] )
+
+  log_process_idx = log_process_idx +1 if log_process_idx+1 < len(log_progress) else 0
+
+	if log.Options.Terminal_Color in opts 
+  {
+		fmt.sbprint(buf, RESET)
+	}
+}
+
+@(private="file")
+do_location_header :: proc(opts: log.Options, buf: ^str.Builder, location := #caller_location) 
+{
+	RESET     :: ansi.CSI + ansi.RESET           + ansi.SGR
+	DARK_GREY :: ansi.CSI + ansi.FG_BRIGHT_BLACK + ansi.SGR
+
+	if log.Location_Header_Opts & opts == nil 
+  {
+		return
+	}
+
+	if log.Options.Terminal_Color in opts 
+  {
+		fmt.sbprint(buf, DARK_GREY)
+	}
+
+	fmt.sbprint(buf, "[")
+
+	file := location.file_path
+	if .Short_File_Path in opts 
+  {
+		last := 0
+		for r, i in location.file_path 
+    {
+			if r == '/' {
+				last = i+1
+			}
+		}
+		file = location.file_path[last:]
+	}
+
+	if log.Location_File_Opts & opts != nil 
+  {
+		fmt.sbprint(buf, file)
+	}
+	if .Line in opts 
+  {
+		if log.Location_File_Opts & opts != nil 
+    {
+			fmt.sbprint(buf, ":")
+		}
+		fmt.sbprint(buf, location.line)
+	}
+
+	if .Procedure in opts 
+  {
+		if (log.Location_File_Opts | {.Line}) & opts != nil 
+    {
+			fmt.sbprint(buf, ":")
+		}
+		fmt.sbprintf(buf, "%s()", location.procedure)
+	}
+
+	fmt.sbprint(buf, "] ")
+
+	if log.Options.Terminal_Color in opts 
+  {
+		fmt.sbprint(buf, RESET)
+	}
+}
+
 main :: proc() 
 {
 
   // setup context
-  // log_file_handle, log_file_handle_err := os.open( "log.txt", os.O_WRONLY )
-  // if log_file_err != nil { fmt.panicf( "failed to load log file\n" ) }
-  // defer os.close( log_file_handle )
-  // context.logger = log.create_multi_logger(
-  //                    log.create_console_logger(),
-  //                    log.create_file_logger( log_file_handle )
-  //                  )
-  context.logger         = log.create_console_logger()
   // context.temp_allocator = runtime.default_temp_allocator_init( 64 * 1024 )
   // runtime.default_temp_allocator_init( context.temp_allocator, 64 * 1024 )
   // init_global_temporary_allocator( 1 * 1024 )
   // init_global_temporary_allocator( 1 )
   
-  if !window_create( 1000, 800, "title", WINDOW_TYPE.MINIMIZED, true )
+  // setup log
+  // context.logger = log.create_console_logger()
+  context.logger = create_console_logger()
+  when ODIN_DEBUG // no need to as windows does it automatically
+  { defer destroy_console_logger( context.logger ) }
+  
+  if !window_create( 1000, 800, "title", Window_Type.MINIMIZED, false )
   {
     panic( "failed to create window" )
   }
@@ -81,15 +283,19 @@ main :: proc()
 
     // @TODO: use context tempt-alloc https://odin-lang.org/docs/faq/#context-system
     title := fmt.tprintf( "fps: %.2f, frame: %v, text_draw_calls: %v", data.cur_fps, data.cur_frame, data.text.last_draw_calls )
-    title_cstr := strings.clone_to_cstring( title )
+    title_cstr := str.clone_to_cstring( title )
     window_set_title( title_cstr )
     
-    if ( keystates[KEY.ESCAPE].pressed )
+    if keystates[KEY.ESCAPE].pressed
     { break }
-    if ( keystates[KEY.TAB].pressed )
+    if keystates[KEY.TAB].pressed
     { 
       data.wireframe_mode_enabled  = !data.wireframe_mode_enabled 
       data.text.draw_solid         = !data.text.draw_solid 
+    }
+    if keystates[KEY.ENTER].pressed
+    { 
+      data.text.draw_solid = !data.text.draw_solid 
     }
     // wireframe mode
     if ( data.wireframe_mode_enabled == true )
@@ -106,6 +312,7 @@ main :: proc()
     // text_draw_glyph( linalg.vec2{ -0.75, -0.5 }, 1 )
     text_y_pos : f32 = 0.75
     str_len_total : i32 = 0
+    // data.text.draw_solid = true
     str_len_total += text_draw_string( data.text.font_name,                         linalg.vec2{ -0.95, text_y_pos } ); text_y_pos -= 0.25 
     str_len_total += text_draw_string( "._. ?!\"'#*/&%$(){}^`<>_-;:,",              linalg.vec2{ -0.95, text_y_pos } ); text_y_pos -= 0.25 
     // str_len_total += text_draw_string( "",                                          linalg.vec2{ -0.95, text_y_pos } ); text_y_pos -= 0.25 
@@ -116,12 +323,26 @@ main :: proc()
 
     // print total amount of runes in drawn strings
     str_len_total += 29 
-    str_len_total_str := fmt.tprintf( "glyphs / chars / runes: % *d", 5, str_len_total )
+    str_len_total_str := fmt.tprintf( "glyphs / chars / runes: %5d", str_len_total )
     text_draw_string( str_len_total_str,                                            linalg.vec2{ -0.95, text_y_pos } ); text_y_pos -= 0.25 
     // fmt.println( "str_len_total: ", str_len_total )
 
     // @TODO:
-    // text_bake_string( "cock",                                                       linalg.vec2{ -0.95, text_y_pos } ); text_y_pos -= 0.25
+    // text_draw_string( "text_draw_string()", linalg.vec2{ 0.0, -0.25 } ) 
+    // text_draw_string( "X", linalg.vec2{ 0.0, -0.25 } ) 
+    @static offs := vec2{ 0.0,  0.0 }
+    SPEED :: 10.0
+    if keystates[KEY.UP].down
+    { offs.y += data.delta_t * SPEED }
+    if keystates[KEY.DOWN].down
+    { offs.y -= data.delta_t * SPEED }
+    if keystates[KEY.LEFT].down
+    { offs.x += data.delta_t * SPEED }
+    if keystates[KEY.RIGHT].down
+    { offs.x -= data.delta_t * SPEED }
+    // text_bake_string( "text_bake_string()", vec2{ 0.0,  0.0 } /* + offs */ )  
+    // text_bake_string( "X", vec2{ 0.0,  0.25 } /* + offs */ )  
+    text_y_pos -= 0.25
 
     glfw.SwapBuffers( data.window )
 
@@ -134,6 +355,22 @@ main :: proc()
   }
 }
 
+util_mat4_mul_v :: #force_inline proc( m: mat4, v: vec4 ) -> ( out: vec4 )
+{
+  out.x = m[0][0] * v[0] + m[1][0] * v[1] + m[2][0] * v[2] + m[3][0] * v[3]
+  out.y = m[0][1] * v[0] + m[1][1] * v[1] + m[2][1] * v[2] + m[3][1] * v[3]
+  out.z = m[0][2] * v[0] + m[1][2] * v[1] + m[2][2] * v[2] + m[3][2] * v[3]
+  out.w = m[0][3] * v[0] + m[1][3] * v[1] + m[2][3] * v[2] + m[3][3] * v[3]
+  return out
+}
+util_mat2_mul_v :: #force_inline proc( m: mat2, v: vec4 ) -> ( out: vec4 )
+{
+  out.x = m[0][0] * v.x + m[1][0] * v.y 
+  out.y = m[0][1] * v.x + m[1][1] * v.y 
+  out.z = 0
+  out.w = 1
+  return out
+}
 
 draw_quad :: proc( pos, scl: linalg.vec2, texture_handle: u32 )
 {

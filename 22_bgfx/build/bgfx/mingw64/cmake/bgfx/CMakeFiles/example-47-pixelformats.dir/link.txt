@@ -1,0 +1,3 @@
+"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\example-47-pixelformats.dir/objects.a
+C:\MinGW64\mingw64\bin\ar.exe qc CMakeFiles\example-47-pixelformats.dir/objects.a @CMakeFiles\example-47-pixelformats.dir\objects1.rsp
+C:\MinGW64\mingw64\bin\c++.exe -mwindows -Wl,--whole-archive CMakeFiles\example-47-pixelformats.dir/objects.a -Wl,--no-whole-archive -o C:\Workspace\C\fisch_bgfx\_bin\example-47-pixelformats.exe -Wl,--out-implib,libexample-47-pixelformats.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\example-47-pixelformats.dir\linkLibs.rsp

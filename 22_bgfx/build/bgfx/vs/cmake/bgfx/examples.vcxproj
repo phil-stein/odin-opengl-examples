@@ -1,0 +1,357 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{DE7ECCDB-3F45-38A7-8BA2-37A5FB228256}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>examples</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/cmake/bgfx/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Workspace/C/fisch_bgfx/_build/make -BC:/Workspace/C/fisch_bgfx/_build/vs22 --check-stamp-file C:/Workspace/C/fisch_bgfx/_build/bgfx/vs/cmake/bgfx/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files\CMake\share\cmake-3.29\Modules\CMakeParseArguments.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\dear-imgui.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\fcpp.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\glsl-optimizer.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\glslang.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\meshoptimizer.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\spirv-cross.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\spirv-opt.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\webgpu.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\bgfx.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\examples.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\generated\shader.cpp.in;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\generated\vertexlayout.cpp.in;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\geometryc.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\geometryv.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\shaderc.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\shared.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\texturev.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\util\ConfigureDebugging.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfxToolUtils.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/cmake/bgfx/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Workspace/C/fisch_bgfx/_build/make -BC:/Workspace/C/fisch_bgfx/_build/vs22 --check-stamp-file C:/Workspace/C/fisch_bgfx/_build/bgfx/vs/cmake/bgfx/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\CMake\share\cmake-3.29\Modules\CMakeParseArguments.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\dear-imgui.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\fcpp.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\glsl-optimizer.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\glslang.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\meshoptimizer.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\spirv-cross.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\spirv-opt.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\webgpu.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\bgfx.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\examples.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\generated\shader.cpp.in;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\generated\vertexlayout.cpp.in;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\geometryc.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\geometryv.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\shaderc.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\shared.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\texturev.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\util\ConfigureDebugging.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfxToolUtils.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/cmake/bgfx/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Workspace/C/fisch_bgfx/_build/make -BC:/Workspace/C/fisch_bgfx/_build/vs22 --check-stamp-file C:/Workspace/C/fisch_bgfx/_build/bgfx/vs/cmake/bgfx/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Program Files\CMake\share\cmake-3.29\Modules\CMakeParseArguments.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\dear-imgui.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\fcpp.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\glsl-optimizer.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\glslang.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\meshoptimizer.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\spirv-cross.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\spirv-opt.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\webgpu.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\bgfx.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\examples.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\generated\shader.cpp.in;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\generated\vertexlayout.cpp.in;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\geometryc.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\geometryv.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\shaderc.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\shared.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\texturev.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\util\ConfigureDebugging.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfxToolUtils.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/cmake/bgfx/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Workspace/C/fisch_bgfx/_build/make -BC:/Workspace/C/fisch_bgfx/_build/vs22 --check-stamp-file C:/Workspace/C/fisch_bgfx/_build/bgfx/vs/cmake/bgfx/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Program Files\CMake\share\cmake-3.29\Modules\CMakeParseArguments.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\dear-imgui.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\fcpp.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\glsl-optimizer.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\glslang.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\meshoptimizer.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\spirv-cross.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\spirv-opt.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\3rdparty\webgpu.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\bgfx.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\examples.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\generated\shader.cpp.in;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\generated\vertexlayout.cpp.in;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\geometryc.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\geometryv.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\shaderc.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\shared.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\texturev.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfx\util\ConfigureDebugging.cmake;C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\cmake\bgfxToolUtils.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Workspace\C\fisch_bgfx\_build\vs22\ZERO_CHECK.vcxproj">
+      <Project>{8192A4C1-2856-3F5B-B1FA-309112B0BDC1}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\example-00-helloworld.vcxproj">
+      <Project>{D2AE2340-CD3C-374B-84AD-6083C23045B0}</Project>
+      <Name>example-00-helloworld</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\example-01-cubes.vcxproj">
+      <Project>{5E0387BF-800E-3190-B4FD-D773370AD032}</Project>
+      <Name>example-01-cubes</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\example-02-metaballs.vcxproj">
+      <Project>{1A22979E-2EC4-36FD-B208-8CEC64301105}</Project>
+      <Name>example-02-metaballs</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\example-03-raymarch.vcxproj">
+      <Project>{A92A3864-F52B-3B18-9731-7AA40FBD9CFD}</Project>
+      <Name>example-03-raymarch</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\example-04-mesh.vcxproj">
+      <Project>{C7C553FF-FC2B-3195-8717-7EFEF924EE08}</Project>
+      <Name>example-04-mesh</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\example-05-instancing.vcxproj">
+      <Project>{8E6626B9-D989-321D-AA57-8A055A4AAD73}</Project>
+      <Name>example-05-instancing</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\example-06-bump.vcxproj">
+      <Project>{4DBCFE5F-00D2-32E2-B277-FA13FAE31EE2}</Project>
+      <Name>example-06-bump</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\example-07-callback.vcxproj">
+      <Project>{EE47C3F7-254C-3089-88E6-619D2F9190A9}</Project>
+      <Name>example-07-callback</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\example-08-update.vcxproj">
+      <Project>{91A55721-18D4-30EB-B739-9E62099837B1}</Project>
+      <Name>example-08-update</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\example-09-hdr.vcxproj">
+      <Project>{9451F2ED-F4F6-3969-911F-5F52650A0779}</Project>
+      <Name>example-09-hdr</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\example-10-font.vcxproj">
+      <Project>{3B7A211C-56D3-39D7-BF92-48AF97E96327}</Project>
+      <Name>example-10-font</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\example-11-fontsdf.vcxproj">
+      <Project>{B3EEB6C8-7CCF-3E7C-8565-8E0AA64F276E}</Project>
+      <Name>example-11-fontsdf</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\example-12-lod.vcxproj">
+      <Project>{11A3C65E-1FCE-361C-9461-63AE62CEAF84}</Project>
+      <Name>example-12-lod</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\example-13-stencil.vcxproj">
+      <Project>{E669B5B5-F7BB-36C4-A3AE-BCFC17BD2631}</Project>
+      <Name>example-13-stencil</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\example-14-shadowvolumes.vcxproj">
+      <Project>{AD2860C0-BD6F-318E-B185-45C74EE4BA4D}</Project>
+      <Name>example-14-shadowvolumes</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\example-15-shadowmaps-simple.vcxproj">
+      <Project>{284A4ADC-16AE-3A50-951C-88CB9A010EA1}</Project>
+      <Name>example-15-shadowmaps-simple</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\example-16-shadowmaps.vcxproj">
+      <Project>{F35AE841-4A23-32E9-9EAF-9C54BB7033B4}</Project>
+      <Name>example-16-shadowmaps</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\example-17-drawstress.vcxproj">
+      <Project>{000B6ED6-BC3B-3CBA-936C-6E53D072B13B}</Project>
+      <Name>example-17-drawstress</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\example-18-ibl.vcxproj">
+      <Project>{82F15E2D-302F-30F7-80FC-9BCCC173381C}</Project>
+      <Name>example-18-ibl</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\example-19-oit.vcxproj">
+      <Project>{026AE6A2-DB64-346F-A947-3DEF09DEC6E3}</Project>
+      <Name>example-19-oit</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\example-20-nanovg.vcxproj">
+      <Project>{3D18B100-C983-31CA-A73B-31F7CA6C9EE2}</Project>
+      <Name>example-20-nanovg</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\example-22-windows.vcxproj">
+      <Project>{5108C328-A933-358B-8507-212B1C413E57}</Project>
+      <Name>example-22-windows</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\example-23-vectordisplay.vcxproj">
+      <Project>{12BAC353-8051-34DA-A395-5EB837C3B454}</Project>
+      <Name>example-23-vectordisplay</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\example-24-nbody.vcxproj">
+      <Project>{EAA22DE8-F47B-3243-86F3-BB2322E75478}</Project>
+      <Name>example-24-nbody</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\example-25-c99.vcxproj">
+      <Project>{B6ABDD7D-1D72-3F3F-B60F-E7DDB70484D4}</Project>
+      <Name>example-25-c99</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\example-26-occlusion.vcxproj">
+      <Project>{100562DF-458D-30D4-BE2C-9C1CF09780D2}</Project>
+      <Name>example-26-occlusion</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\example-27-terrain.vcxproj">
+      <Project>{F381BE07-85EF-35E2-83B8-6BAE546EDF6F}</Project>
+      <Name>example-27-terrain</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\example-28-wireframe.vcxproj">
+      <Project>{A3857F07-41DC-3E15-9B60-1659694C41E2}</Project>
+      <Name>example-28-wireframe</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\example-29-debugdraw.vcxproj">
+      <Project>{1E6BC524-F93B-3E9C-9CA2-5B9DEE799088}</Project>
+      <Name>example-29-debugdraw</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\example-30-picking.vcxproj">
+      <Project>{66177F28-CBA2-3CF6-9F66-6441897BDB25}</Project>
+      <Name>example-30-picking</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\example-31-rsm.vcxproj">
+      <Project>{6434AFE0-7579-3A08-9BE0-00E685B75698}</Project>
+      <Name>example-31-rsm</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\example-32-particles.vcxproj">
+      <Project>{2931E174-8BCD-3138-AAFE-102B940335AC}</Project>
+      <Name>example-32-particles</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\example-33-pom.vcxproj">
+      <Project>{12219B1E-154E-371C-AE56-99A8C2504453}</Project>
+      <Name>example-33-pom</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\example-34-mvs.vcxproj">
+      <Project>{1EFDC7EB-190D-3637-9210-5EC64B70423D}</Project>
+      <Name>example-34-mvs</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\example-35-dynamic.vcxproj">
+      <Project>{13B3ADC1-42B9-324C-8918-B57B78B23054}</Project>
+      <Name>example-35-dynamic</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\example-36-sky.vcxproj">
+      <Project>{9C3B070C-CBE1-36D5-8E31-A8C6604F7586}</Project>
+      <Name>example-36-sky</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\example-38-bloom.vcxproj">
+      <Project>{37AE43DE-93F1-30F5-BB01-14B5183BB162}</Project>
+      <Name>example-38-bloom</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\example-39-assao.vcxproj">
+      <Project>{A3168DF3-48A6-3D88-8BE6-1D5B3D8E02BC}</Project>
+      <Name>example-39-assao</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\example-40-svt.vcxproj">
+      <Project>{F7439189-19D6-3172-BB59-EDF69B2B48E7}</Project>
+      <Name>example-40-svt</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\example-42-bunnylod.vcxproj">
+      <Project>{B8976882-4C94-3950-856B-610B6E5CD748}</Project>
+      <Name>example-42-bunnylod</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\example-43-denoise.vcxproj">
+      <Project>{4AC90111-C074-3501-8028-8C5D15F9C059}</Project>
+      <Name>example-43-denoise</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\example-44-sss.vcxproj">
+      <Project>{0F5CD9FF-4ED0-3A96-BD95-EB47B10F8579}</Project>
+      <Name>example-44-sss</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\example-45-bokeh.vcxproj">
+      <Project>{73E9912B-0F4E-39AA-906A-088512468BC0}</Project>
+      <Name>example-45-bokeh</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\example-46-fsr.vcxproj">
+      <Project>{96599DA0-CBFB-3B9D-8653-2A20308395E9}</Project>
+      <Name>example-46-fsr</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Workspace\C\fisch_bgfx\_build\bgfx\vs\cmake\bgfx\example-47-pixelformats.vcxproj">
+      <Project>{E17A979B-D1FF-3FDA-9A58-FCA71057F427}</Project>
+      <Name>example-47-pixelformats</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

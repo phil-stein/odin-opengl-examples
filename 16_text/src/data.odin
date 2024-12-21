@@ -6,8 +6,16 @@ import        "vendor:glfw"
 import gl     "vendor:OpenGL"
 
 
-WINDOW_TYPE :: enum { MINIMIZED, MAXIMIZED, FULLSCREEN };
+// "typedefs" for linalg/glsl package
+vec2 :: linalg.vec2
+vec3 :: linalg.vec3
+vec4 :: linalg.vec4
+mat2 :: linalg.mat2
+mat3 :: linalg.mat3
+mat4 :: linalg.mat4
 
+
+Window_Type :: enum { MINIMIZED, MAXIMIZED, FULLSCREEN };
 
 mesh_t :: struct
 {
@@ -26,9 +34,12 @@ data_t :: struct
   window         : glfw.WindowHandle,
   window_width   : int,
   window_height  : int,
+  monitor        : glfw.MonitorHandle,
   monitor_width  : int,
   monitor_height : int,
   window_title   : string,
+  vsync_enabled  : bool,
+  window_type    : Window_Type,
 
   quad_vao : u32,
   quad_vbo : u32,
@@ -135,7 +146,7 @@ data_init :: proc()
                                         #load( "../assets/text.frag", cstring ), "text_shader" )
 
   data.text.baked_shader = shader_make( #load( "../assets/text_baked.vert", cstring ),
-                                        #load( "../assets/text.frag", cstring ), "text_baked_shader" )
+                                        #load( "../assets/text.frag",       cstring ), "text_baked_shader" )
   
   // text -----------------------------------------------------------------------------------------------------
 

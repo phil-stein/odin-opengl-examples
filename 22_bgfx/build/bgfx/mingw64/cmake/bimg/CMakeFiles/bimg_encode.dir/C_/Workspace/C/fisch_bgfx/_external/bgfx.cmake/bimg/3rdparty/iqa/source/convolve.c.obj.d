@@ -1,0 +1,19 @@
+C:/Workspace/C/fisch_bgfx/_build/bgfx/mingw64/cmake/bimg/CMakeFiles/bimg_encode.dir/C_/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bimg/3rdparty/iqa/source/convolve.c.obj: \
+ C:\Workspace\C\fisch_bgfx\_external\bgfx.cmake\bimg\3rdparty\iqa\source\convolve.c \
+ C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bimg/3rdparty/iqa/include/convolve.h \
+ C:/MinGW64/mingw64/x86_64-w64-mingw32/include/stdlib.h \
+ C:/MinGW64/mingw64/x86_64-w64-mingw32/include/corecrt.h \
+ C:/MinGW64/mingw64/x86_64-w64-mingw32/include/_mingw.h \
+ C:/MinGW64/mingw64/x86_64-w64-mingw32/include/_mingw_mac.h \
+ C:/MinGW64/mingw64/x86_64-w64-mingw32/include/_mingw_secapi.h \
+ C:/MinGW64/mingw64/x86_64-w64-mingw32/include/vadefs.h \
+ C:/MinGW64/mingw64/x86_64-w64-mingw32/include/sdks/_mingw_ddk.h \
+ C:/MinGW64/mingw64/x86_64-w64-mingw32/include/corecrt_wstdlib.h \
+ C:/MinGW64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/limits.h \
+ C:/MinGW64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/syslimits.h \
+ C:/MinGW64/mingw64/x86_64-w64-mingw32/include/limits.h \
+ C:/MinGW64/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
+ C:/MinGW64/mingw64/x86_64-w64-mingw32/include/sec_api/stdlib_s.h \
+ C:/MinGW64/mingw64/x86_64-w64-mingw32/include/malloc.h \
+ C:/MinGW64/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/mm_malloc.h \
+ C:/MinGW64/mingw64/x86_64-w64-mingw32/include/errno.h

@@ -1,0 +1,41 @@
+file(REMOVE_RECURSE
+  "C:/Workspace/C/fisch_bgfx/_bin/example-15-shadowmaps-simple.exe"
+  "C:/Workspace/C/fisch_bgfx/_bin/example-15-shadowmaps-simple.exe.manifest"
+  "C:/Workspace/C/fisch_bgfx/_bin/example-15-shadowmaps-simple.pdb"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/dx11/fs_sms_mesh.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/dx11/fs_sms_mesh_pd.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/dx11/fs_sms_shadow.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/dx11/fs_sms_shadow_pd.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/dx11/vs_sms_mesh.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/dx11/vs_sms_shadow.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/dx11/vs_sms_shadow_pd.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/essl/fs_sms_mesh.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/essl/fs_sms_mesh_pd.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/essl/fs_sms_shadow.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/essl/fs_sms_shadow_pd.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/essl/vs_sms_mesh.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/essl/vs_sms_shadow.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/essl/vs_sms_shadow_pd.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/glsl/fs_sms_mesh.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/glsl/fs_sms_mesh_pd.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/glsl/fs_sms_shadow.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/glsl/fs_sms_shadow_pd.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/glsl/vs_sms_mesh.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/glsl/vs_sms_shadow.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/glsl/vs_sms_shadow_pd.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/spirv/fs_sms_mesh.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/spirv/fs_sms_mesh_pd.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/spirv/fs_sms_shadow.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/spirv/fs_sms_shadow_pd.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/spirv/vs_sms_mesh.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/spirv/vs_sms_shadow.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/spirv/vs_sms_shadow_pd.bin"
+  "CMakeFiles/example-15-shadowmaps-simple.dir/C_/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/15-shadowmaps-simple/shadowmaps_simple.cpp.obj"
+  "CMakeFiles/example-15-shadowmaps-simple.dir/C_/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/15-shadowmaps-simple/shadowmaps_simple.cpp.obj.d"
+  "libexample-15-shadowmaps-simple.dll.a"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/example-15-shadowmaps-simple.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

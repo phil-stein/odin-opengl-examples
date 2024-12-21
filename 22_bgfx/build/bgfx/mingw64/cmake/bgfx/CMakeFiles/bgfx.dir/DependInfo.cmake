@@ -1,0 +1,42 @@
+
+# Consider dependencies only in project.
+set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
+
+# The set of languages for which implicit dependencies are needed:
+set(CMAKE_DEPENDS_LANGUAGES
+  )
+
+# The set of dependency files which are needed:
+set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src/bgfx.cpp" "C:/Workspace/C/fisch_bgfx/_build/bgfx/mingw64/cmake/bgfx/CMakeFiles/bgfx.dir/C_/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src/bgfx.cpp.obj" "gcc" "C:/Workspace/C/fisch_bgfx/_build/bgfx/mingw64/cmake/bgfx/CMakeFiles/bgfx.dir/C_/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src/bgfx.cpp.obj.d"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src/debug_renderdoc.cpp" "C:/Workspace/C/fisch_bgfx/_build/bgfx/mingw64/cmake/bgfx/CMakeFiles/bgfx.dir/C_/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src/debug_renderdoc.cpp.obj" "gcc" "C:/Workspace/C/fisch_bgfx/_build/bgfx/mingw64/cmake/bgfx/CMakeFiles/bgfx.dir/C_/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src/debug_renderdoc.cpp.obj.d"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src/dxgi.cpp" "C:/Workspace/C/fisch_bgfx/_build/bgfx/mingw64/cmake/bgfx/CMakeFiles/bgfx.dir/C_/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src/dxgi.cpp.obj" "gcc" "C:/Workspace/C/fisch_bgfx/_build/bgfx/mingw64/cmake/bgfx/CMakeFiles/bgfx.dir/C_/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src/dxgi.cpp.obj.d"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src/glcontext_egl.cpp" "C:/Workspace/C/fisch_bgfx/_build/bgfx/mingw64/cmake/bgfx/CMakeFiles/bgfx.dir/C_/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src/glcontext_egl.cpp.obj" "gcc" "C:/Workspace/C/fisch_bgfx/_build/bgfx/mingw64/cmake/bgfx/CMakeFiles/bgfx.dir/C_/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src/glcontext_egl.cpp.obj.d"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src/glcontext_html5.cpp" "C:/Workspace/C/fisch_bgfx/_build/bgfx/mingw64/cmake/bgfx/CMakeFiles/bgfx.dir/C_/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src/glcontext_html5.cpp.obj" "gcc" "C:/Workspace/C/fisch_bgfx/_build/bgfx/mingw64/cmake/bgfx/CMakeFiles/bgfx.dir/C_/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src/glcontext_html5.cpp.obj.d"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src/glcontext_wgl.cpp" "C:/Workspace/C/fisch_bgfx/_build/bgfx/mingw64/cmake/bgfx/CMakeFiles/bgfx.dir/C_/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src/glcontext_wgl.cpp.obj" "gcc" "C:/Workspace/C/fisch_bgfx/_build/bgfx/mingw64/cmake/bgfx/CMakeFiles/bgfx.dir/C_/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src/glcontext_wgl.cpp.obj.d"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src/nvapi.cpp" "C:/Workspace/C/fisch_bgfx/_build/bgfx/mingw64/cmake/bgfx/CMakeFiles/bgfx.dir/C_/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src/nvapi.cpp.obj" "gcc" "C:/Workspace/C/fisch_bgfx/_build/bgfx/mingw64/cmake/bgfx/CMakeFiles/bgfx.dir/C_/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src/nvapi.cpp.obj.d"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src/renderer_agc.cpp" "C:/Workspace/C/fisch_bgfx/_build/bgfx/mingw64/cmake/bgfx/CMakeFiles/bgfx.dir/C_/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src/renderer_agc.cpp.obj" "gcc" "C:/Workspace/C/fisch_bgfx/_build/bgfx/mingw64/cmake/bgfx/CMakeFiles/bgfx.dir/C_/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src/renderer_agc.cpp.obj.d"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src/renderer_d3d11.cpp" "C:/Workspace/C/fisch_bgfx/_build/bgfx/mingw64/cmake/bgfx/CMakeFiles/bgfx.dir/C_/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src/renderer_d3d11.cpp.obj" "gcc" "C:/Workspace/C/fisch_bgfx/_build/bgfx/mingw64/cmake/bgfx/CMakeFiles/bgfx.dir/C_/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src/renderer_d3d11.cpp.obj.d"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src/renderer_d3d12.cpp" "C:/Workspace/C/fisch_bgfx/_build/bgfx/mingw64/cmake/bgfx/CMakeFiles/bgfx.dir/C_/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src/renderer_d3d12.cpp.obj" "gcc" "C:/Workspace/C/fisch_bgfx/_build/bgfx/mingw64/cmake/bgfx/CMakeFiles/bgfx.dir/C_/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src/renderer_d3d12.cpp.obj.d"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src/renderer_gl.cpp" "C:/Workspace/C/fisch_bgfx/_build/bgfx/mingw64/cmake/bgfx/CMakeFiles/bgfx.dir/C_/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src/renderer_gl.cpp.obj" "gcc" "C:/Workspace/C/fisch_bgfx/_build/bgfx/mingw64/cmake/bgfx/CMakeFiles/bgfx.dir/C_/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src/renderer_gl.cpp.obj.d"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src/renderer_gnm.cpp" "C:/Workspace/C/fisch_bgfx/_build/bgfx/mingw64/cmake/bgfx/CMakeFiles/bgfx.dir/C_/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src/renderer_gnm.cpp.obj" "gcc" "C:/Workspace/C/fisch_bgfx/_build/bgfx/mingw64/cmake/bgfx/CMakeFiles/bgfx.dir/C_/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src/renderer_gnm.cpp.obj.d"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src/renderer_noop.cpp" "C:/Workspace/C/fisch_bgfx/_build/bgfx/mingw64/cmake/bgfx/CMakeFiles/bgfx.dir/C_/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src/renderer_noop.cpp.obj" "gcc" "C:/Workspace/C/fisch_bgfx/_build/bgfx/mingw64/cmake/bgfx/CMakeFiles/bgfx.dir/C_/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src/renderer_noop.cpp.obj.d"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src/renderer_nvn.cpp" "C:/Workspace/C/fisch_bgfx/_build/bgfx/mingw64/cmake/bgfx/CMakeFiles/bgfx.dir/C_/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src/renderer_nvn.cpp.obj" "gcc" "C:/Workspace/C/fisch_bgfx/_build/bgfx/mingw64/cmake/bgfx/CMakeFiles/bgfx.dir/C_/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src/renderer_nvn.cpp.obj.d"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src/renderer_vk.cpp" "C:/Workspace/C/fisch_bgfx/_build/bgfx/mingw64/cmake/bgfx/CMakeFiles/bgfx.dir/C_/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src/renderer_vk.cpp.obj" "gcc" "C:/Workspace/C/fisch_bgfx/_build/bgfx/mingw64/cmake/bgfx/CMakeFiles/bgfx.dir/C_/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src/renderer_vk.cpp.obj.d"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src/shader.cpp" "C:/Workspace/C/fisch_bgfx/_build/bgfx/mingw64/cmake/bgfx/CMakeFiles/bgfx.dir/C_/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src/shader.cpp.obj" "gcc" "C:/Workspace/C/fisch_bgfx/_build/bgfx/mingw64/cmake/bgfx/CMakeFiles/bgfx.dir/C_/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src/shader.cpp.obj.d"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src/shader_dxbc.cpp" "C:/Workspace/C/fisch_bgfx/_build/bgfx/mingw64/cmake/bgfx/CMakeFiles/bgfx.dir/C_/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src/shader_dxbc.cpp.obj" "gcc" "C:/Workspace/C/fisch_bgfx/_build/bgfx/mingw64/cmake/bgfx/CMakeFiles/bgfx.dir/C_/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src/shader_dxbc.cpp.obj.d"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src/shader_spirv.cpp" "C:/Workspace/C/fisch_bgfx/_build/bgfx/mingw64/cmake/bgfx/CMakeFiles/bgfx.dir/C_/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src/shader_spirv.cpp.obj" "gcc" "C:/Workspace/C/fisch_bgfx/_build/bgfx/mingw64/cmake/bgfx/CMakeFiles/bgfx.dir/C_/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src/shader_spirv.cpp.obj.d"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src/topology.cpp" "C:/Workspace/C/fisch_bgfx/_build/bgfx/mingw64/cmake/bgfx/CMakeFiles/bgfx.dir/C_/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src/topology.cpp.obj" "gcc" "C:/Workspace/C/fisch_bgfx/_build/bgfx/mingw64/cmake/bgfx/CMakeFiles/bgfx.dir/C_/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src/topology.cpp.obj.d"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src/vertexlayout.cpp" "C:/Workspace/C/fisch_bgfx/_build/bgfx/mingw64/cmake/bgfx/CMakeFiles/bgfx.dir/C_/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src/vertexlayout.cpp.obj" "gcc" "C:/Workspace/C/fisch_bgfx/_build/bgfx/mingw64/cmake/bgfx/CMakeFiles/bgfx.dir/C_/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/src/vertexlayout.cpp.obj.d"
+  )
+
+# Targets to which this target links which contain Fortran sources.
+set(CMAKE_Fortran_TARGET_LINKED_INFO_FILES
+  )
+
+# Targets to which this target links which contain Fortran sources.
+set(CMAKE_Fortran_TARGET_FORWARD_LINKED_INFO_FILES
+  )
+
+# Fortran module output directory.
+set(CMAKE_Fortran_TARGET_MODULE_DIR "")

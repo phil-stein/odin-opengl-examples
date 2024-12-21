@@ -1,0 +1,1 @@
+ ../bx/libbx.a libfcpp.a libglslang.a "libglsl-optimizer.a" "libspirv-opt.a" "libspirv-cross.a" ../bx/libbx.a ../bimg/libbimg.a libfcpp.a libglslang.a "libglsl-optimizer.a" "libspirv-opt.a" "libspirv-cross.a" ../bx/libbx.a -lpsapi -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 

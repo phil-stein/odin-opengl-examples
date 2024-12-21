@@ -1,0 +1,41 @@
+file(REMOVE_RECURSE
+  "C:/Workspace/C/fisch_bgfx/_bin/example-38-bloom.exe"
+  "C:/Workspace/C/fisch_bgfx/_bin/example-38-bloom.exe.manifest"
+  "C:/Workspace/C/fisch_bgfx/_bin/example-38-bloom.pdb"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/dx11/fs_albedo_output.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/dx11/fs_bloom_combine.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/dx11/fs_downsample.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/dx11/fs_upsample.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/dx11/vs_albedo_output.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/dx11/vs_deferred_combine.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/dx11/vs_fullscreen.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/essl/fs_albedo_output.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/essl/fs_bloom_combine.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/essl/fs_downsample.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/essl/fs_upsample.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/essl/vs_albedo_output.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/essl/vs_deferred_combine.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/essl/vs_fullscreen.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/glsl/fs_albedo_output.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/glsl/fs_bloom_combine.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/glsl/fs_downsample.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/glsl/fs_upsample.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/glsl/vs_albedo_output.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/glsl/vs_deferred_combine.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/glsl/vs_fullscreen.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/spirv/fs_albedo_output.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/spirv/fs_bloom_combine.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/spirv/fs_downsample.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/spirv/fs_upsample.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/spirv/vs_albedo_output.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/spirv/vs_deferred_combine.bin"
+  "C:/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/runtime/shaders/spirv/vs_fullscreen.bin"
+  "CMakeFiles/example-38-bloom.dir/C_/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/38-bloom/bloom.cpp.obj"
+  "CMakeFiles/example-38-bloom.dir/C_/Workspace/C/fisch_bgfx/_external/bgfx.cmake/bgfx/examples/38-bloom/bloom.cpp.obj.d"
+  "libexample-38-bloom.dll.a"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/example-38-bloom.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

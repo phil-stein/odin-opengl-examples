@@ -1,0 +1,3 @@
+"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\example-39-assao.dir/objects.a
+C:\MinGW64\mingw64\bin\ar.exe qc CMakeFiles\example-39-assao.dir/objects.a @CMakeFiles\example-39-assao.dir\objects1.rsp
+C:\MinGW64\mingw64\bin\c++.exe -mwindows -Wl,--whole-archive CMakeFiles\example-39-assao.dir/objects.a -Wl,--no-whole-archive -o C:\Workspace\C\fisch_bgfx\_bin\example-39-assao.exe -Wl,--out-implib,libexample-39-assao.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\example-39-assao.dir\linkLibs.rsp
