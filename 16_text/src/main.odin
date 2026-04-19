@@ -27,7 +27,8 @@ import        "core:image/png"
 import str    "core:strings"
 import        "core:mem/virtual"
 import        "base:runtime"
-import        "core:encoding/ansi"
+// import        "core:encoding/ansi"
+import        "core:terminal/ansi"
 
 // Global variables.
 // global_vao       : u32 
