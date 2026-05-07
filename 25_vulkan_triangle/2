@@ -22,7 +22,6 @@ window_should_close : bool = false
 window: glfw.WindowHandle
 instance: vk.Instance 
 debug_messenger: vk.DebugUtilsMessengerEXT 
-physical_device: vk.PhysicalDevice = nil;
 
 vk_loader: win32.HMODULE
 
@@ -48,17 +47,6 @@ set_proc_address :: proc(p: rawptr, name: cstring)
   // (cast(^rawptr)p)^ = fptr
 }
 
-vk_check :: #force_inline proc( res: vk.Result, message := "Detected Vulkan error", loc := #caller_location ) -> vk.Result
-{
-	if res != vk.Result.SUCCESS
-  {
-    fmt.eprintln( "[VULKAN-ERROR] ", res )
-    fmt.eprintln( " -> message:", message )
-    fmt.eprintln( " -> loc:", loc )
-	}
-  return res
-}
-
 main :: proc() 
 {
   fmt.println( "[VULKAN-TRIANGLE] -> enable_validation_layers:", enable_validation_layers )
@@ -74,12 +62,10 @@ main :: proc()
     glfw.PollEvents()
   }
 
-  // cleanup @PERFORMANCE: not needed, put in ODIN_DEBUG block or some
-  if enable_validation_layers do vulkan_DestroyDebugUtilsMessengerEXT(instance, debug_messenger, nil)
-  vk.DestroyInstance( instance, nil )
-
+  // cleanup @PERFORMANCE: not needed
   glfw.DestroyWindow( window );
   glfw.Terminate();
+  if enable_validation_layers do vulkan_DestroyDebugUtilsMessengerEXT(instance, debug_messenger, nil)
 }
 
 window_init :: proc( width, height: int )
@@ -98,13 +84,10 @@ window_init :: proc( width, height: int )
 vulkan_init :: proc()
 {
   vulkan_load()
-  fmt.eprintln( "post vulkan_load()" )
+  // fmt.println( "post vulkan_load()" )
   vulkan_create_instance()
-  fmt.println( "post vulkan_create_instance()" )
+  // fmt.println( "post vulkan_create_instance()" )
   vulkan_setup_debug_messenger()
-  fmt.println( "post vulkan_setup_debug_messenger()" )
-  vulkan_pick_physical_device()
-  fmt.println( "post vulkan_pick_physical_device()" )
 }
 vulkan_load :: proc()
 {
@@ -136,23 +119,35 @@ vulkan_create_instance :: proc()
   create_info.sType = vk.StructureType.INSTANCE_CREATE_INFO
   create_info.pApplicationInfo = &app_info;
 
+  // // glfw_extension_count := 0
+  // glfw_extensions := glfw.GetRequiredInstanceExtensions()
+  //
+  // fmt.println( "-> len(glfw_extensions):", len(glfw_extensions) )
+  // for e, i in glfw_extensions
+  // {
+  //   fmt.printfln( "--> [%.2d]: %s", i, e )
+  // }
+
   required_extensions := vulkan_get_required_extensions()  // @TODO: this never gets freed
   create_info.enabledExtensionCount   = u32(len(required_extensions))
   create_info.ppEnabledExtensionNames = raw_data(required_extensions)
+  // create_info.enabledExtensionCount   = u32(len(glfw_extensions))
+  // create_info.ppEnabledExtensionNames = raw_data(glfw_extensions);
   
+  // VkDebugUtilsMessengerCreateInfoEXT debugCreateInfo{};
   debug_create_info : vk.DebugUtilsMessengerCreateInfoEXT
   if enable_validation_layers
   {
     create_info.enabledLayerCount   = u32(len(validation_layers))
     create_info.ppEnabledLayerNames = raw_data(&validation_layers)
     
-    vulkan_populate_debug_messenger_create_info( &debug_create_info )
-    create_info.pNext = &debug_create_info
+    populateDebugMessengerCreateInfo(debugCreateInfo);
+    create_info.pNext = (VkDebugUtilsMessengerCreateInfoEXT*) &debugCreateInfo;
   } 
   else 
   {
-    create_info.enabledLayerCount = 0
-    create_info.pNext = nil
+    create_info.enabledLayerCount = 0;
+    createInfo.pNext = nullptr;
   }
  
   result := vk.CreateInstance( &create_info, nil, &instance )
@@ -183,19 +178,18 @@ vulkan_create_instance :: proc()
 vulkan_check_validation_layer_support :: proc() -> bool
 {
   layer_count: u32;
-  vk_check( vk.EnumerateInstanceLayerProperties( &layer_count, nil ), "vk.EnumerateInstanceLayerProperties() failed" )
+  vk.EnumerateInstanceLayerProperties( &layer_count, nil )
 
   // std::vector<VkLayerProperties> availableLayers(layerCount);
   available_layers := make( []vk.LayerProperties, layer_count )
-  vk_check( vk.EnumerateInstanceLayerProperties( &layer_count, raw_data(available_layers) ), "vk.EnumerateInstanceLayerProperties() failed" )
+  vk.EnumerateInstanceLayerProperties( &layer_count, raw_data(available_layers) ) 
   
   for layer_name in validation_layers
   {
     layer_found := false
-    for &layer_properties, i in available_layers 
+    for &layer_properties in available_layers 
     {
       cstr := cstring(raw_data(&layer_properties.layerName))
-      fmt.println( "[VULKAN-LAYER] [", i, "]->", cstr )
       if layer_name == cstr
       {
         layer_found = true
@@ -234,20 +228,19 @@ vulkan_get_required_extensions :: proc() -> ( [dynamic]cstring )
 
 vulkan_debug_callback :: proc "stdcall" (messageSeverity: vk.DebugUtilsMessageSeverityFlagsEXT, messageTypes: vk.DebugUtilsMessageTypeFlagsEXT, pCallbackData: ^vk.DebugUtilsMessengerCallbackDataEXT, pUserData: rawptr) -> b32
 {
-  // if vk.DebugUtilsMessageSeverityFlagEXT.VERBOSE not_in messageSeverity 
   if vk.DebugUtilsMessageSeverityFlagEXT.VERBOSE not_in messageSeverity && 
      vk.DebugUtilsMessageSeverityFlagEXT.INFO    not_in messageSeverity  
   {
     context = runtime.default_context()
     // Message is important enough to show
-    fmt.eprintln( "[VULKAN-ERROR] validation layer:", messageSeverity , pCallbackData.pMessage )
+    fmt.eprintln( "[ERROR] validation layer:", pCallbackData.pMessage )
   }
   return false
 }
 vulkan_populate_debug_messenger_create_info :: proc(create_info: ^vk.DebugUtilsMessengerCreateInfoEXT )
 {
   create_info.sType = vk.StructureType.DEBUG_UTILS_MESSENGER_CREATE_INFO_EXT
-  create_info.messageSeverity = { vk.DebugUtilsMessageSeverityFlagEXT.INFO, vk.DebugUtilsMessageSeverityFlagEXT.VERBOSE, vk.DebugUtilsMessageSeverityFlagEXT.WARNING, vk.DebugUtilsMessageSeverityFlagEXT.ERROR }
+  create_info.messageSeverity = { vk.DebugUtilsMessageSeverityFlagEXT.VERBOSE, vk.DebugUtilsMessageSeverityFlagEXT.WARNING, vk.DebugUtilsMessageSeverityFlagEXT.ERROR }
   create_info.messageType = { vk.DebugUtilsMessageTypeFlagEXT.GENERAL, vk.DebugUtilsMessageTypeFlagEXT.VALIDATION,  vk.DebugUtilsMessageTypeFlagEXT.PERFORMANCE }
   create_info.pfnUserCallback = vulkan_debug_callback;
   create_info.pUserData = nil; // Optional
@@ -289,48 +282,6 @@ vulkan_DestroyDebugUtilsMessengerEXT :: proc "stdcall" (instance: vk.Instance, m
   {
       func(instance, debug_messenger, pAllocator);
   }
-}
-
-vulkan_pick_physical_device :: proc()
-{
-  fmt.println( "-> vulkan_pick_physical_device()" )
-
-  device_count : u32 = 0
-  vk_check( vk.EnumeratePhysicalDevices( instance, &device_count, nil ), "vk.EnumeratePhysicalDevices() failed" )
-  if device_count <= 0
-  {
-    fmt.eprintln("[ERROR] failed to find GPUs with Vulkan support!");
-    os.exit( 1 )
-  }
-  fmt.println( "-> device count:", device_count )
-
-  // std::vector<VkPhysicalDevice> devices(deviceCount);
-  devices := make( []vk.PhysicalDevice, device_count )
-  defer delete(devices)
-  vk_check( vk.EnumeratePhysicalDevices( instance, &device_count, raw_data(devices) ), "vk.EnumeratePhysicalDevices() failed" )
-  
-  for device in devices 
-  {
-    if vulkan_is_device_suitable( device ) 
-    {
-        physical_device = device
-        break
-    }
-  }
-
-  if physical_device == nil 
-  {
-    fmt.eprintln("[ERROR] failed to find a suitable GPU!");
-  }
-}
-vulkan_is_device_suitable :: proc(device: vk.PhysicalDevice ) -> bool 
-{
-  device_properties : vk.PhysicalDeviceProperties
-  device_features: vk.PhysicalDeviceFeatures
-  vk.GetPhysicalDeviceProperties( device, &device_properties )
-  vk.GetPhysicalDeviceFeatures( device, &device_features )
-
-  return device_properties.deviceType == vk.PhysicalDeviceType.DISCRETE_GPU && bool(device_features.geometryShader)
 }
 
 make_triangle :: proc()
